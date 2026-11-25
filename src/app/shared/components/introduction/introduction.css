@@ -1,4 +1,3 @@
-
 /* ==========================================
    RAÍCES — POSTALES EDITORIALES
 ========================================== */
@@ -13,6 +12,10 @@
   --terracotta: #c47d65;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* ==========================================
    CONTENEDOR PRINCIPAL
 ========================================== */
@@ -20,12 +23,11 @@
 .intro {
   position: relative;
 
-  width: min(100%, 1200px);
+  width: min(100%, 1440px);
 
   margin: 0 auto;
-  padding: 90px 32px 55px;
+  padding: 90px 40px 70px;
 
-  box-sizing: border-box;
   text-align: center;
 }
 
@@ -36,22 +38,7 @@
 .intro-header {
   position: relative;
 
-  margin-bottom: 55px;
-}
-
-.intro-label {
-  margin: 0 0 24px;
-
-  color: var(--calakmul);
-
-  font-family: 'Manrope', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-
-  animation: text-reveal 900ms ease both;
+  margin-bottom: 65px;
 }
 
 .intro-title {
@@ -81,24 +68,23 @@
 }
 
 /* ==========================================
-   GALERÍA DE POSTALES
+   GALERÍA DE SIETE POSTALES
 ========================================== */
 
 .postcards-gallery {
-  display: grid;
-
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
 
   align-items: center;
+  justify-content: center;
 
-  gap: 36px;
+  column-gap: 34px;
+  row-gap: 65px;
 
-  width: min(100%, 850px);
+  width: min(100%, 1100px);
 
   margin: 0 auto;
-  padding: 25px 15px 35px;
-
-  box-sizing: border-box;
+  padding: 25px 15px 40px;
 }
 
 /* ==========================================
@@ -108,6 +94,8 @@
 .memory-card {
   position: relative;
 
+  flex: 0 0 calc((100% - 102px) / 4);
+
   min-width: 0;
 
   margin: 0;
@@ -115,12 +103,12 @@
 
   background: #fffefa;
 
-  border: 1px solid rgba(40, 75, 64, 0.08);
+  border: 1px solid #284b4014;
   border-radius: 2px;
 
   box-shadow:
-    0 5px 12px rgba(38, 43, 40, 0.05),
-    0 18px 35px rgba(38, 43, 40, 0.08);
+    0 5px 12px #262b280d,
+    0 18px 35px #262b2814;
 
   transform:
     translateY(var(--offset, 0px))
@@ -132,51 +120,66 @@
 
   animation: postcard-reveal 1100ms
     cubic-bezier(0.22, 1, 0.36, 1)
-    both;
-}
+    backwards;
 
-/* Postal izquierda */
-
-.memory-left {
-  --rotation: -5deg;
-  --offset: 22px;
-
-  animation-delay: 200ms;
-}
-
-/* Postal central */
-
-.memory-center {
-  --rotation: 1deg;
-  --offset: -14px;
-
-  z-index: 2;
-
-  animation-delay: 350ms;
-}
-
-/* Postal derecha */
-
-.memory-right {
-  --rotation: 5deg;
-  --offset: 25px;
-
-  animation-delay: 500ms;
+  animation-delay: calc(150ms + var(--index, 0) * 100ms);
 }
 
 /* ==========================================
-   INTERACCIÓN DE POSTALES
+   INCLINACIONES INDIVIDUALES
+========================================== */
+
+.memory-card-1 {
+  --rotation: -5deg;
+  --offset: 22px;
+}
+
+.memory-card-2 {
+  --rotation: 1deg;
+  --offset: -14px;
+}
+
+.memory-card-3 {
+  --rotation: 4deg;
+  --offset: 12px;
+}
+
+.memory-card-4 {
+  --rotation: -3deg;
+  --offset: -8px;
+}
+
+.memory-card-5 {
+  --rotation: -4deg;
+  --offset: 12px;
+}
+
+.memory-card-6 {
+  --rotation: 2deg;
+  --offset: -12px;
+}
+
+.memory-card-7 {
+  --rotation: 5deg;
+  --offset: 15px;
+}
+
+/* ==========================================
+   MICROINTERACCIONES
 ========================================== */
 
 .memory-card:hover,
 .memory-card:focus-within {
   z-index: 5;
 
-  transform: translateY(-16px) rotate(0deg);
+  transform:
+    translateY(-16px)
+    rotate(0deg)
+    scale(1.025);
 
   box-shadow:
-    0 12px 25px rgba(38, 43, 40, 0.08),
-    0 30px 55px rgba(38, 43, 40, 0.14);
+    0 12px 25px #262b2814,
+    0 30px 55px #262b2824;
 }
 
 /* ==========================================
@@ -210,19 +213,19 @@
     filter 600ms ease;
 }
 
-.memory-card:hover img {
+.memory-card:hover img,
+.memory-card:focus-within img {
   transform: scale(1.055);
 
   filter: saturate(1);
 }
 
-/* Textura sutil sobre la fotografía */
-
 .memory-image::after {
   position: absolute;
+
   inset: 0;
 
-  background: rgba(230, 214, 189, 0.05);
+  background: #e6d6bd0d;
 
   pointer-events: none;
 
@@ -246,6 +249,10 @@
   text-align: left;
 }
 
+.memory-information {
+  min-width: 0;
+}
+
 .memory-caption h3 {
   margin: 0 0 5px;
 
@@ -256,6 +263,7 @@
   font-weight: 500;
 
   line-height: 1.1;
+  overflow-wrap: anywhere;
 }
 
 .memory-caption p {
@@ -297,88 +305,36 @@
 
   line-height: 1.5;
   text-align: left;
-  text-decoration: none;
 
   overflow-wrap: anywhere;
+}
+
+.photo-credit a {
+  color: inherit;
+
+  text-decoration: none;
 
   transition: color 250ms ease;
 }
 
-.photo-credit:hover {
+.photo-credit a:hover {
   color: var(--calakmul);
 
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.photo-credit:focus-visible {
+.photo-credit a:focus-visible {
   outline: 1px solid var(--calakmul);
   outline-offset: 3px;
 }
 
 /* ==========================================
-   CIERRE NARRATIVO
-========================================== */
-
-.intro-bottom {
-  margin: 50px auto 0;
-}
-
-.intro-description {
-  max-width: 540px;
-
-  margin: 0 auto;
-
-  color: #62675f;
-
-  font-family: 'Manrope', sans-serif;
-  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
-  font-weight: 400;
-
-  line-height: 1.9;
-
-  text-wrap: balance;
-
-  animation: text-reveal 900ms ease 600ms both;
-}
-
-/* ==========================================
-   DIVISOR EDITORIAL
-========================================== */
-
-.intro-divider {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 14px;
-
-  margin: 40px auto 0;
-}
-
-.intro-divider span:not(.divider-diamond) {
-  display: block;
-
-  width: 65px;
-  height: 1px;
-
-  background: #c8bba7;
-}
-
-.divider-diamond {
-  width: 5px;
-  height: 5px;
-
-  background: var(--terracotta);
-
-  transform: rotate(45deg);
-}
-
-/* ==========================================
-   ANIMACIÓN DE TEXTOS
+   ANIMACIÓN DEL TÍTULO
 ========================================== */
 
 @keyframes text-reveal {
+
   from {
     opacity: 0;
 
@@ -390,6 +346,7 @@
 
     transform: translateY(0);
   }
+
 }
 
 /* ==========================================
@@ -397,6 +354,7 @@
 ========================================== */
 
 @keyframes postcard-reveal {
+
   from {
     opacity: 0;
 
@@ -414,6 +372,30 @@
       rotate(var(--rotation, 0deg))
       scale(1);
   }
+
+}
+
+/* ==========================================
+   RESPONSIVE — TABLETS GRANDES
+========================================== */
+
+@media (max-width: 1100px) {
+
+  .intro {
+    padding: 75px 35px 55px;
+  }
+
+  .postcards-gallery {
+    max-width: 850px;
+
+    column-gap: 30px;
+    row-gap: 50px;
+  }
+
+  .memory-card {
+    flex-basis: calc((100% - 60px) / 3);
+  }
+
 }
 
 /* ==========================================
@@ -421,30 +403,32 @@
 ========================================== */
 
 @media (max-width: 900px) {
+
   .intro {
     padding: 75px 30px 50px;
   }
 
   .postcards-gallery {
     max-width: 700px;
-    gap: 22px;
+
+    column-gap: 22px;
+    row-gap: 42px;
   }
 
   .memory-card {
+    flex-basis: calc((100% - 44px) / 3);
+
     padding: 8px 8px 12px;
-  }
-
-  .memory-left {
-    --rotation: -4deg;
-  }
-
-  .memory-right {
-    --rotation: 4deg;
   }
 
   .memory-caption {
     padding: 13px 4px 6px;
   }
+
+  .memory-caption h3 {
+    font-size: 1.5rem;
+  }
+
 }
 
 /* ==========================================
@@ -452,19 +436,13 @@
 ========================================== */
 
 @media (max-width: 600px) {
+
   .intro {
     padding: 60px 20px 40px;
   }
 
   .intro-header {
-    margin-bottom: 28px;
-  }
-
-  .intro-label {
-    margin-bottom: 18px;
-
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    margin-bottom: 30px;
   }
 
   .intro-title {
@@ -474,37 +452,30 @@
   }
 
   .postcards-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 420px;
 
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 30px;
 
-    max-width: 350px;
-
-    padding: 15px 8px;
+    padding: 15px 8px 25px;
   }
 
   .memory-card {
+    flex-basis: calc((100% - 20px) / 2);
+
     padding: 6px 6px 10px;
-  }
-
-  .memory-left {
-    --rotation: -4deg;
-    --offset: 8px;
-  }
-
-  .memory-center {
-    --rotation: 3deg;
-    --offset: -5px;
-  }
-
-  .memory-right {
-    grid-column: 1 / -1;
-
-    justify-self: center;
-
-    width: calc(50% - 10px);
 
     --rotation: -3deg;
+    --offset: 0px;
+  }
+
+  .memory-card:nth-child(even) {
+    --rotation: 3deg;
+    --offset: 5px;
+  }
+
+  .memory-card:last-child {
+    --rotation: -2deg;
     --offset: 0px;
   }
 
@@ -515,7 +486,7 @@
   }
 
   .memory-caption h3 {
-    font-size: 1.15rem;
+    font-size: clamp(1rem, 4.6vw, 1.4rem);
   }
 
   .memory-caption p {
@@ -532,19 +503,13 @@
     font-size: 8px;
   }
 
-  .intro-bottom {
-    margin-top: 30px;
+  .memory-card:hover,
+  .memory-card:focus-within {
+    transform:
+      translateY(-5px)
+      rotate(0deg);
   }
 
-  .intro-description {
-    max-width: 320px;
-
-    font-size: 0.85rem;
-  }
-
-  .intro-divider {
-    margin-top: 28px;
-  }
 }
 
 /* ==========================================
@@ -552,13 +517,13 @@
 ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .intro-label,
+
   .intro-title,
-  .intro-description,
   .memory-card,
   .memory-image img {
     animation: none;
     transition: none;
+
     opacity: 1;
   }
 
@@ -569,7 +534,9 @@
       rotate(var(--rotation, 0deg));
   }
 
-  .memory-card:hover img {
+  .memory-card:hover img,
+  .memory-card:focus-within img {
     transform: none;
   }
+
 }
