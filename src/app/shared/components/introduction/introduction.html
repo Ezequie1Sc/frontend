@@ -1,16 +1,17 @@
-
 <section class="intro">
 
-  <!-- Encabezado editorial -->
+  <!-- ENCABEZADO EDITORIAL -->
+
   <div class="intro-header">
 
-  
-
     <h2 class="intro-title">
-      {{ state.t(
-        'Donde la historia',
-        'Where history'
-      ) }}
+
+      {{
+        state.t(
+          'Donde la historia',
+          'Where history'
+        )
+      }}
 
       <br />
 
@@ -19,132 +20,108 @@
       <em>
         {{ state.t('al mar.', 'the sea.') }}
       </em>
+
     </h2>
 
   </div>
 
-  <!-- Galería de postales -->
+  <!-- GALERÍA EDITORIAL -->
+
   <div class="postcards-gallery">
 
-    <!-- Bécal -->
-    <figure class="memory-card memory-left">
+    @for (postcard of postcards; track postcard.id; let i = $index) {
 
-      <div class="memory-image">
-        <img
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/Church_at_B%C3%A9cal,_Campeche,_Mexico_3.jpg?width=800"
-          [alt]="state.t('Iglesia de Bécal', 'Church of Bécal')"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+      <figure
+        class="memory-card"
+        [class]="'memory-card memory-card-' + (i + 1)"
+        [style.--index]="i"
+      >
 
-      <figcaption class="memory-caption">
-        <div>
-          <h3>Bécal</h3>
+        <!-- FOTOGRAFÍA -->
 
-          <p>
-            {{ state.t(
-              'Tradiciones que perduran',
-              'Enduring traditions'
-            ) }}
-          </p>
+        <div class="memory-image">
+
+          <img
+            [src]="imageUrl(postcard.file)"
+            [alt]="state.t(postcard.altEs, postcard.altEn)"
+            [style.object-position]="postcard.position"
+            loading="lazy"
+            decoding="async"
+            width="800"
+            height="1000"
+          />
+
         </div>
 
-        <span class="memory-number">01</span>
-      </figcaption>
+        <!-- DESTINO -->
 
-      <a
-        class="photo-credit"
-        href="https://commons.wikimedia.org/wiki/File:Church_at_B%C3%A9cal,_Campeche,_Mexico_3.jpg"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Donna Yates · CC BY-SA 4.0
-      </a>
+        <figcaption class="memory-caption">
 
-    </figure>
+          <div class="memory-information">
 
-    <!-- Hecelchakán -->
-    <figure class="memory-card memory-center">
+            <h3>
+              {{ postcard.name }}
+            </h3>
 
-      <div class="memory-image">
-        <img
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/Iglesia_de_Hecelchacan,_Campeche.jpg?width=800"
-          [alt]="state.t(
-            'Iglesia de Hecelchakán',
-            'Church of Hecelchakán'
-          )"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+            <p>
 
-      <figcaption class="memory-caption">
-        <div>
-          <h3>Hecelchakán</h3>
+              {{
+                state.t(
+                  postcard.descriptionEs,
+                  postcard.descriptionEn
+                )
+              }}
 
-          <p>
-            {{ state.t(
-              'El corazón de nuestras raíces',
-              'The heart of our roots'
-            ) }}
-          </p>
+            </p>
+
+          </div>
+
+          <span
+            class="memory-number"
+            aria-hidden="true"
+          >
+
+            {{ formatNumber(i) }}
+
+          </span>
+
+        </figcaption>
+
+        <!-- CRÉDITOS FOTOGRÁFICOS -->
+
+        <div class="photo-credit">
+
+          <a
+            [href]="sourceUrl(postcard.file)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            {{ postcard.author }}
+
+          </a>
+
+          <span> · </span>
+
+          <a
+            [href]="licenseUrl(postcard.license)"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            CC BY-SA {{ postcard.license }}
+
+          </a>
+
+          <span>
+            · {{ state.t('Vista recortada', 'Cropped view') }}
+          </span>
+
         </div>
 
-        <span class="memory-number">02</span>
-      </figcaption>
+      </figure>
 
-      <a
-        class="photo-credit"
-        href="https://commons.wikimedia.org/wiki/File:Iglesia_de_Hecelchacan,_Campeche.jpg"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Comisión Mexicana de Filmaciones · CC BY-SA 2.0
-      </a>
-
-    </figure>
-
-    <!-- Palizada -->
-    <figure class="memory-card memory-right">
-
-      <div class="memory-image">
-        <img
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/Iglesia_Palizada_Campeche_-_panoramio.jpg?width=800"
-          [alt]="state.t(
-            'Iglesia de Palizada',
-            'Church of Palizada'
-          )"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-
-      <figcaption class="memory-caption">
-        <div>
-          <h3>Palizada</h3>
-
-          <p>
-            {{ state.t(
-              'Historias junto al río',
-              'Stories by the river'
-            ) }}
-          </p>
-        </div>
-
-        <span class="memory-number">03</span>
-      </figcaption>
-
-      <a
-        class="photo-credit"
-        href="https://commons.wikimedia.org/wiki/File:Iglesia_Palizada_Campeche_-_panoramio.jpg"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        panza.rayada · CC BY-SA 3.0
-      </a>
-
-    </figure>
+    }
 
   </div>
 
