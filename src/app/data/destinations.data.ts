@@ -74,4 +74,49 @@ export const destinations: Destination[] = [
         lon: -91.4833,
         alt: 'Costa y aguas de Isla Aguada, Campeche'
     }
+    ,{
+    id: 'becal',
+    name: 'Bécal',
+    categoryEs: 'Tradición artesanal',
+    categoryEn: 'Artisan traditions',
+    descriptionEs: 'Una tierra de artesanos donde el tejido de jipi-japa mantiene viva una tradición transmitida entre generaciones.',
+    descriptionEn: 'A land of artisans where traditional jipi-japa weaving preserves a heritage passed down through generations.',
+    url: 'https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%A9cal.jpg',
+    source: 'https://commons.wikimedia.org/wiki/File:B%C3%A9cal.jpg',
+    author: 'Cesarloar',
+    license: '4.0',
+    lat: 20.4426,
+    lon: -90.0282,
+    alt: 'Monumento tradicional de Bécal, Campeche'
+},
+{
+    id: 'hecelchakan',
+    name: 'Hecelchakán',
+    categoryEs: 'Identidad y patrimonio',
+    categoryEn: 'Identity and heritage',
+    descriptionEs: 'En el corazón del Camino Real, Hecelchakán conserva sus tradiciones, su arquitectura y la memoria de su gente.',
+    descriptionEn: 'In the heart of the Camino Real, Hecelchakán preserves its traditions, architecture and community heritage.',
+    url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Plaza_principal_de_Hecelchak%C3%A1n.jpg',
+    source: 'https://commons.wikimedia.org/wiki/File:Plaza_principal_de_Hecelchak%C3%A1n.jpg',
+    author: 'Josemiep',
+    license: '4.0',
+    lat: 20.1783,
+    lon: -90.1344,
+    alt: 'Plaza principal de Hecelchakán'
+},
+{
+    id: 'palizada',
+    name: 'Palizada',
+    categoryEs: 'Historias junto al río',
+    categoryEn: 'Riverside stories',
+    descriptionEs: 'Entre portales, tejados tradicionales y paisajes junto al río, Palizada conserva una identidad única.',
+    descriptionEn: 'Among traditional rooftops, historic arcades and riverside landscapes, Palizada preserves its unique identity.',
+    url: 'https://commons.wikimedia.org/wiki/Special:FilePath/Portales_Palizada_Campeche_-_panoramio.jpg',
+    source: 'https://commons.wikimedia.org/wiki/File:Portales_Palizada_Campeche_-_panoramio.jpg',
+    author: 'panza.rayada',
+    license: '3.0',
+    lat: 18.2544,
+    lon: -92.0908,
+    alt: 'Portales tradicionales de Palizada, Campeche'
+}
 ];
