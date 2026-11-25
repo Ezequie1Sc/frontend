@@ -1,0 +1,819 @@
+/* ========================================
+   RAÍCES — EXPLORACIÓN CULTURAL
+======================================== */
+
+:host {
+    display: block;
+}
+
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+.map-section {
+    --forest: #284b40;
+    --colonial: #f6f3eb;
+    --sand: #e6d6bd;
+    --terracotta: #c47d65;
+    --carbon: #262b28;
+    --muted: #666c65;
+    --ocean: #e1e8df;
+
+    scroll-margin-top: 100px;
+}
+
+/* ========================================
+   ENCABEZADO
+======================================== */
+
+.section-head {
+    margin-bottom: 2.5rem;
+}
+
+.section-head h2 {
+    margin: 0 0 1rem;
+
+    color: var(--carbon);
+
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+}
+
+.section-head p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ========================================
+   DISTRIBUCIÓN PRINCIPAL
+======================================== */
+
+.map-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+
+    align-items: stretch;
+
+    gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* ========================================
+   CONTENEDOR DEL MAPA
+======================================== */
+
+.map-area {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 0;
+    min-height: 500px;
+
+    padding: 1.5rem;
+
+    background: var(--ocean);
+
+    border: 1px solid #d3dbd0;
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+/* ========================================
+   MAPA SVG
+======================================== */
+
+.campeche-map {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    max-height: 580px;
+
+    overflow: visible;
+}
+
+/* ========================================
+   TERRITORIO DE CAMPECHE
+======================================== */
+
+.state-fill {
+    fill: var(--sand);
+
+    stroke: #587365;
+    stroke-width: 1.2;
+
+    stroke-linejoin: round;
+    stroke-linecap: round;
+
+    fill-rule: evenodd;
+
+    vector-effect: non-scaling-stroke;
+}
+
+/* ========================================
+   GOLFO DE MÉXICO
+======================================== */
+
+.gulf-label {
+    fill: #597d7a;
+
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+
+    letter-spacing: 0.04em;
+
+    pointer-events: none;
+}
+
+/* ========================================
+   BRÚJULA
+======================================== */
+
+.compass {
+    fill: var(--forest);
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+
+/* ========================================
+   MARCADORES GEOGRÁFICOS
+======================================== */
+
+.marker {
+    cursor: pointer;
+    outline: none;
+}
+
+.marker-hit {
+    fill: transparent;
+    pointer-events: all;
+}
+
+.marker-dot {
+    fill: var(--forest);
+
+    stroke: var(--colonial);
+    stroke-width: 2;
+
+    transition:
+        fill 250ms ease,
+        stroke-width 250ms ease;
+}
+
+/* Marcador seleccionado */
+
+.marker.active .marker-dot {
+    fill: var(--terracotta);
+    stroke-width: 2.5;
+}
+
+/* Interacción con el marcador */
+
+.marker:hover .marker-dot,
+.marker:focus-visible .marker-dot {
+    fill: var(--terracotta);
+}
+
+/* Anillo exterior */
+
+.marker-ring {
+    fill: none;
+
+    stroke: var(--terracotta);
+    stroke-width: 1.5;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 250ms ease;
+}
+
+.marker.active .marker-ring {
+    opacity: 1;
+
+    animation: markerPulse 2.5s ease-out infinite;
+}
+
+.marker:focus-visible .marker-ring {
+    opacity: 1;
+}
+
+/* ========================================
+   ETIQUETAS DE LOS DESTINOS
+======================================== */
+
+.marker-label {
+    fill: var(--carbon);
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    paint-order: stroke;
+
+    stroke: var(--colonial);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+
+    pointer-events: none;
+
+    animation: labelReveal 300ms ease both;
+}
+
+/* ========================================
+   CRÉDITOS CARTOGRÁFICOS
+======================================== */
+
+.map-credit {
+    align-self: flex-end;
+
+    margin: 0.75rem 0 0;
+
+    color: #62716a;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    line-height: 1.5;
+
+    text-align: right;
+}
+
+/* ========================================
+   ESTADO DE CARGA Y ERROR
+======================================== */
+
+.map-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 380px;
+
+    padding: 2rem;
+
+    color: var(--forest);
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+/* ========================================
+   PANEL EDITORIAL
+======================================== */
+
+.map-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-width: 0;
+    padding: 0;
+}
+
+.destination-content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    animation: revealDestination 500ms ease both;
+}
+
+/* ========================================
+   FOTOGRAFÍA DEL DESTINO
+======================================== */
+
+.panel-photo {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 16 / 10;
+
+    margin: 0;
+
+    background: var(--sand);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.panel-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    visibility: visible;
+    opacity: 1;
+
+    transition: transform 700ms cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+    );
+}
+
+@media (hover: hover) {
+
+    .panel-photo:hover img {
+        transform: scale(1.035);
+    }
+
+}
+
+/* Imagen no disponible */
+
+.panel-photo img[data-unavailable="true"] {
+    opacity: 0.35;
+}
+
+/* ========================================
+   CONTENIDO EDITORIAL
+======================================== */
+
+.panel-content {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1.75rem 0 0;
+}
+
+/* ========================================
+   NOMBRE DEL DESTINO
+======================================== */
+
+.map-panel h3 {
+    margin: 0 0 1rem;
+
+    color: var(--carbon);
+
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    line-height: 1.05;
+
+    letter-spacing: -0.025em;
+}
+
+/* ========================================
+   DESCRIPCIÓN
+======================================== */
+
+.desc {
+    max-width: 100%;
+
+    margin: 0 0 1.75rem;
+
+    color: #555d56;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.85;
+}
+
+/* ========================================
+   ACCIONES DEL PANEL
+======================================== */
+
+.panel-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ========================================
+   BOTÓN CREAR POSTAL
+======================================== */
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1.25rem;
+
+    min-height: 48px;
+
+    padding: 0.85rem 1.4rem;
+
+    background: var(--forest);
+
+    border: 1px solid var(--forest);
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 250ms ease,
+        border-color 250ms ease,
+        transform 250ms ease;
+}
+
+.cta:hover {
+    background: #193b30;
+    border-color: #193b30;
+
+    transform: translateY(-2px);
+}
+
+.cta:active {
+    transform: translateY(0);
+}
+
+.cta svg {
+    flex-shrink: 0;
+
+    transition: transform 250ms ease;
+}
+
+.cta:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* ========================================
+   NAVEGACIÓN ENTRE DESTINOS
+======================================== */
+
+.panel-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 0.65rem;
+}
+
+/* ========================================
+   FLECHAS DE NAVEGACIÓN
+======================================== */
+
+.nav-btn {
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 46px;
+    height: 46px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 1px solid #a1a89d;
+    border-radius: 50%;
+
+    color: var(--forest);
+
+    cursor: pointer;
+
+    transition:
+        background 250ms ease,
+        color 250ms ease,
+        border-color 250ms ease,
+        transform 250ms ease;
+}
+
+.nav-btn svg {
+    display: block;
+
+    width: 18px;
+    height: 18px;
+
+    pointer-events: none;
+}
+
+.nav-btn:hover {
+    background: var(--forest);
+
+    border-color: var(--forest);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+.nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   CRÉDITOS FOTOGRÁFICOS
+======================================== */
+
+.photo-credit {
+    display: inline-block;
+
+    align-self: flex-start;
+
+    margin-top: 1.25rem;
+
+    color: #737970;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    text-decoration: none;
+
+    transition: color 250ms ease;
+}
+
+.photo-credit:hover {
+    color: var(--forest);
+    text-decoration: underline;
+}
+
+/* ========================================
+   ELEMENTOS ELIMINADOS
+======================================== */
+
+/*
+   Se ocultan por compatibilidad en caso
+   de que todavía existan en el HTML.
+*/
+
+.dest-list,
+.map-panel .num,
+.map-panel .category,
+.map-panel .coords {
+    display: none !important;
+}
+
+/* ========================================
+   ACCESIBILIDAD
+======================================== */
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 4px;
+}
+
+/* ========================================
+   ANIMACIÓN DEL DESTINO
+======================================== */
+
+@keyframes revealDestination {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* ========================================
+   ANIMACIÓN DEL MARCADOR
+======================================== */
+
+@keyframes markerPulse {
+
+    0% {
+        opacity: 0.9;
+        stroke-width: 1.5;
+    }
+
+    70% {
+        opacity: 0.2;
+        stroke-width: 5;
+    }
+
+    100% {
+        opacity: 0;
+        stroke-width: 7;
+    }
+
+}
+
+/* ========================================
+   ANIMACIÓN DE ETIQUETAS
+======================================== */
+
+@keyframes labelReveal {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+/* ========================================
+   RESPONSIVE — TABLETS
+======================================== */
+
+@media (max-width: 900px) {
+
+    .section-head {
+        margin-bottom: 2rem;
+    }
+
+    .map-layout {
+        grid-template-columns: 1fr;
+
+        gap: 2rem;
+    }
+
+    .map-area {
+        min-height: auto;
+
+        padding: 1rem;
+    }
+
+    .campeche-map {
+        max-height: 500px;
+    }
+
+    .map-panel {
+        padding: 0;
+    }
+
+    .panel-photo {
+        aspect-ratio: 16 / 9;
+    }
+
+    .panel-content {
+        padding-top: 1.5rem;
+    }
+
+    .map-message {
+        min-height: 300px;
+    }
+
+}
+
+/* ========================================
+   RESPONSIVE — MÓVILES
+======================================== */
+
+@media (max-width: 480px) {
+
+    .map-section {
+        scroll-margin-top: 80px;
+    }
+
+    .section-head {
+        margin-bottom: 1.5rem;
+    }
+
+    .section-head h2 {
+        font-size: 2.8rem;
+    }
+
+    .section-head p {
+        font-size: 0.85rem;
+    }
+
+    .map-layout {
+        gap: 1.75rem;
+    }
+
+    .map-area {
+        padding: 0.75rem;
+
+        border-radius: 8px;
+    }
+
+    .campeche-map {
+        max-height: 380px;
+    }
+
+    .panel-photo {
+        aspect-ratio: 4 / 3;
+
+        border-radius: 8px;
+    }
+
+    .panel-content {
+        padding-top: 1.25rem;
+    }
+
+    .map-panel h3 {
+        font-size: 2.5rem;
+
+        margin-bottom: 0.75rem;
+    }
+
+    .desc {
+        font-size: 0.85rem;
+        line-height: 1.75;
+
+        margin-bottom: 1.5rem;
+    }
+
+    .panel-actions {
+        gap: 0.75rem;
+    }
+
+    .cta {
+        min-height: 44px;
+
+        padding: 0.75rem 1rem;
+
+        font-size: 0.75rem;
+
+        gap: 0.75rem;
+    }
+
+    .panel-nav {
+        gap: 0.5rem;
+    }
+
+    .nav-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .map-credit,
+    .photo-credit {
+        font-size: 0.6rem;
+    }
+
+    .map-message {
+        min-height: 260px;
+
+        padding: 1rem;
+    }
+
+}
+
+/* ========================================
+   ACCESIBILIDAD — MOVIMIENTO REDUCIDO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .destination-content,
+    .marker.active .marker-ring,
+    .marker-label {
+        animation: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+
+    .panel-photo:hover img,
+    .cta:hover,
+    .cta:hover svg,
+    .nav-btn:hover {
+        transform: none;
+    }
+
+}

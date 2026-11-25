@@ -1,0 +1,202 @@
+
+<header
+    class="site-header"
+    [class.scrolled]="scrolled()"
+    [class.menu-open]="menuOpen()"
+>
+
+    <div class="header-container">
+
+        <!-- LOGOTIPO -->
+
+        <a
+            href="#home"
+            class="logo"
+            (click)="closeMenu()"
+            aria-label="RAÍCES — Campeche"
+        >
+            <span class="logo-name">RAÍCES</span>
+            <span class="logo-location">CAMPECHE · MX</span>
+        </a>
+
+        <!-- NAVEGACIÓN DE ESCRITORIO -->
+
+        <nav
+            class="desktop-nav"
+            [attr.aria-label]="state.t(
+                'Navegación principal',
+                'Main navigation'
+            )"
+        >
+
+            @for (link of links; track link.id) {
+
+                <a
+                    [href]="'#' + link.id"
+                    [class.active]="activeSection() === link.id"
+                    [attr.aria-current]="
+                        activeSection() === link.id
+                            ? 'location'
+                            : null
+                    "
+                    (click)="navigate(link.id)"
+                >
+                    {{ state.t(link.es, link.en) }}
+                </a>
+
+            }
+
+        </nav>
+
+        <!-- CONTROLES DEL HEADER -->
+
+        <div class="header-actions">
+
+            <!-- SELECTOR DE IDIOMA -->
+
+            <div class="language desktop-language">
+
+                <button
+                    type="button"
+                    (click)="changeLanguage('es')"
+                    [class.selected]="state.i18n.lang() === 'es'"
+                    [attr.aria-pressed]="state.i18n.lang() === 'es'"
+                    aria-label="Español"
+                >
+                    ES
+                </button>
+
+                <button
+                    type="button"
+                    (click)="changeLanguage('en')"
+                    [class.selected]="state.i18n.lang() === 'en'"
+                    [attr.aria-pressed]="state.i18n.lang() === 'en'"
+                    aria-label="English"
+                >
+                    EN
+                </button>
+
+            </div>
+
+            <!-- BOTÓN MENÚ MÓVIL -->
+
+            <button
+                type="button"
+                class="menu-toggle"
+                [class.is-open]="menuOpen()"
+                [attr.aria-expanded]="menuOpen()"
+                aria-controls="mobile-navigation"
+                [attr.aria-label]="menuOpen()
+                    ? state.t('Cerrar menú', 'Close menu')
+                    : state.t('Abrir menú', 'Open menu')"
+                (click)="toggleMenu()"
+            >
+
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- NAVEGACIÓN MÓVIL -->
+
+    <div
+        id="mobile-navigation"
+        class="mobile-menu"
+        [class.visible]="menuOpen()"
+        [attr.inert]="menuOpen() ? null : ''"
+        [attr.aria-hidden]="!menuOpen()"
+    >
+
+        <div class="mobile-menu-inner">
+
+            <nav
+                class="mobile-nav"
+                [attr.aria-label]="state.t(
+                    'Navegación móvil',
+                    'Mobile navigation'
+                )"
+            >
+
+                @for (link of links; track link.id; let i = $index) {
+
+                    <a
+                        [href]="'#' + link.id"
+                        [class.active]="activeSection() === link.id"
+                        [style.--index]="i"
+                        (click)="navigate(link.id)"
+                    >
+
+                        <span>
+                            {{ state.t(link.es, link.en) }}
+                        </span>
+
+                        <svg
+                            width="23"
+                            height="23"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.3"
+                            aria-hidden="true"
+                        >
+                            <path d="M6 18L18 6M6 6h12v12"/>
+                        </svg>
+
+                    </a>
+
+                }
+
+            </nav>
+
+            <!-- IDIOMA EN MÓVIL -->
+
+            <div class="mobile-menu-bottom">
+
+                <div class="language">
+
+                    <button
+                        type="button"
+                        (click)="changeLanguage('es')"
+                        [class.selected]="state.i18n.lang() === 'es'"
+                        [attr.aria-pressed]="state.i18n.lang() === 'es'"
+                        aria-label="Español"
+                    >
+                        ES
+                    </button>
+
+                    <button
+                        type="button"
+                        (click)="changeLanguage('en')"
+                        [class.selected]="state.i18n.lang() === 'en'"
+                        [attr.aria-pressed]="state.i18n.lang() === 'en'"
+                        aria-label="English"
+                    >
+                        EN
+                    </button>
+
+                </div>
+
+                <span class="mobile-location">
+                    Campeche, México
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- FONDO DEL MENÚ MÓVIL -->
+
+<div
+    class="menu-backdrop"
+    [class.visible]="menuOpen()"
+    (click)="closeMenu()"
+    aria-hidden="true"
+></div>

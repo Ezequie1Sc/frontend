@@ -1,0 +1,151 @@
+
+<section class="intro">
+
+  <!-- Encabezado editorial -->
+  <div class="intro-header">
+
+  
+
+    <h2 class="intro-title">
+      {{ state.t(
+        'Donde la historia',
+        'Where history'
+      ) }}
+
+      <br />
+
+      {{ state.t('encuentra', 'meets') }}
+
+      <em>
+        {{ state.t('al mar.', 'the sea.') }}
+      </em>
+    </h2>
+
+  </div>
+
+  <!-- Galería de postales -->
+  <div class="postcards-gallery">
+
+    <!-- Bécal -->
+    <figure class="memory-card memory-left">
+
+      <div class="memory-image">
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Church_at_B%C3%A9cal,_Campeche,_Mexico_3.jpg?width=800"
+          [alt]="state.t('Iglesia de Bécal', 'Church of Bécal')"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <figcaption class="memory-caption">
+        <div>
+          <h3>Bécal</h3>
+
+          <p>
+            {{ state.t(
+              'Tradiciones que perduran',
+              'Enduring traditions'
+            ) }}
+          </p>
+        </div>
+
+        <span class="memory-number">01</span>
+      </figcaption>
+
+      <a
+        class="photo-credit"
+        href="https://commons.wikimedia.org/wiki/File:Church_at_B%C3%A9cal,_Campeche,_Mexico_3.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Donna Yates · CC BY-SA 4.0
+      </a>
+
+    </figure>
+
+    <!-- Hecelchakán -->
+    <figure class="memory-card memory-center">
+
+      <div class="memory-image">
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Iglesia_de_Hecelchacan,_Campeche.jpg?width=800"
+          [alt]="state.t(
+            'Iglesia de Hecelchakán',
+            'Church of Hecelchakán'
+          )"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <figcaption class="memory-caption">
+        <div>
+          <h3>Hecelchakán</h3>
+
+          <p>
+            {{ state.t(
+              'El corazón de nuestras raíces',
+              'The heart of our roots'
+            ) }}
+          </p>
+        </div>
+
+        <span class="memory-number">02</span>
+      </figcaption>
+
+      <a
+        class="photo-credit"
+        href="https://commons.wikimedia.org/wiki/File:Iglesia_de_Hecelchacan,_Campeche.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Comisión Mexicana de Filmaciones · CC BY-SA 2.0
+      </a>
+
+    </figure>
+
+    <!-- Palizada -->
+    <figure class="memory-card memory-right">
+
+      <div class="memory-image">
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Iglesia_Palizada_Campeche_-_panoramio.jpg?width=800"
+          [alt]="state.t(
+            'Iglesia de Palizada',
+            'Church of Palizada'
+          )"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <figcaption class="memory-caption">
+        <div>
+          <h3>Palizada</h3>
+
+          <p>
+            {{ state.t(
+              'Historias junto al río',
+              'Stories by the river'
+            ) }}
+          </p>
+        </div>
+
+        <span class="memory-number">03</span>
+      </figcaption>
+
+      <a
+        class="photo-credit"
+        href="https://commons.wikimedia.org/wiki/File:Iglesia_Palizada_Campeche_-_panoramio.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        panza.rayada · CC BY-SA 3.0
+      </a>
+
+    </figure>
+
+  </div>
+
+</section>

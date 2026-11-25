@@ -1,0 +1,45 @@
+<section id="studio" class="section studio">
+  <div class="section-head">
+    <p class="eyebrow">04 / CLOUDINARY STUDIO</p>
+    <h2>{{state.t('Un recuerdo para llevar.','A memory to take home.')}}</h2>
+    <p>{{state.t('Transforma una fotografía y crea una postal.','Transform a photograph and create a postcard.')}}</p>
+  </div>
+  <div class="editor">
+    <div class="controls">
+      <label>
+        {{state.t('Destino','Destination')}}
+        <select [ngModel]="state.selected().id" (ngModelChange)="state.select(state.destinations[$event === 'campeche' ? 0 : $event === 'edzna' ? 1 : $event === 'calakmul' ? 2 : 3])">
+          @for(d of state.destinations;track d.id){
+            <option [value]="d.id">{{d.name}}</option>
+          }
+        </select>
+      </label>
+      <label>
+        {{state.t('Estilo fotográfico','Photo style')}}
+        <select [ngModel]="state.filter()" (ngModelChange)="state.changeFilter($event)">
+          @for(f of state.filters;track f.id){
+            <option [value]="f.id">{{state.t(f.es,f.en)}}</option>
+          }
+        </select>
+      </label>
+      <label>
+        {{state.t('Dedicatoria','Message')}}
+        <input maxlength="80" [ngModel]="state.message()" (ngModelChange)="state.message.set($event)">
+      </label>
+      <button class="cta" (click)="state.download()" [disabled]="state.busy()||state.failed()">{{state.busy()?state.t('Preparando…','Preparing…'):state.t('Descargar PNG','Download PNG')}}</button>
+      <a [href]="state.preview()" target="_blank" rel="noopener">{{state.t('Ver transformación Cloudinary','View Cloudinary transformation')}} ↗</a>
+      <p role="status">{{state.status()}}</p>
+      @if(state.failed()){
+        <p role="alert">{{state.t('Cloudinary no está disponible. Habilita Remote Fetch para exportar.','Cloudinary unavailable. Enable Remote Fetch to export.')}}</p>
+      }
+    </div>
+    <div class="postcard">
+      @for(key of [state.preview()];track key){
+        <img [src]="key" [alt]="state.selected().name" (error)="state.previewError($event)">
+      }
+      <h3>{{state.selected().name}}</h3>
+      <p>{{state.message()||state.t('Recuerdos de Campeche','Memories of Campeche')}}</p>
+      <small>{{state.selected().author}} · CC BY-SA {{state.selected().license}} · {{state.t('Imagen adaptada','Adapted image')}}</small>
+    </div>
+  </div>
+</section>

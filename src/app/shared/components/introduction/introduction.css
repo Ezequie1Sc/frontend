@@ -1,0 +1,575 @@
+
+/* ==========================================
+   RAÍCES — POSTALES EDITORIALES
+========================================== */
+
+:host {
+  display: block;
+
+  --colonial: #f6f3eb;
+  --calakmul: #284b40;
+  --carbon: #262b28;
+  --sand: #e6d6bd;
+  --terracotta: #c47d65;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+========================================== */
+
+.intro {
+  position: relative;
+
+  width: min(100%, 1200px);
+
+  margin: 0 auto;
+  padding: 90px 32px 55px;
+
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* ==========================================
+   ENCABEZADO EDITORIAL
+========================================== */
+
+.intro-header {
+  position: relative;
+
+  margin-bottom: 55px;
+}
+
+.intro-label {
+  margin: 0 0 24px;
+
+  color: var(--calakmul);
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+
+  animation: text-reveal 900ms ease both;
+}
+
+.intro-title {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  color: var(--carbon);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 400;
+
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+
+  animation: text-reveal 1000ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    150ms both;
+}
+
+.intro-title em {
+  color: var(--calakmul);
+
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ==========================================
+   GALERÍA DE POSTALES
+========================================== */
+
+.postcards-gallery {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  align-items: center;
+
+  gap: 36px;
+
+  width: min(100%, 850px);
+
+  margin: 0 auto;
+  padding: 25px 15px 35px;
+
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   POSTAL INDIVIDUAL
+========================================== */
+
+.memory-card {
+  position: relative;
+
+  min-width: 0;
+
+  margin: 0;
+  padding: 10px 10px 14px;
+
+  background: #fffefa;
+
+  border: 1px solid rgba(40, 75, 64, 0.08);
+  border-radius: 2px;
+
+  box-shadow:
+    0 5px 12px rgba(38, 43, 40, 0.05),
+    0 18px 35px rgba(38, 43, 40, 0.08);
+
+  transform:
+    translateY(var(--offset, 0px))
+    rotate(var(--rotation, 0deg));
+
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 500ms ease;
+
+  animation: postcard-reveal 1100ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+/* Postal izquierda */
+
+.memory-left {
+  --rotation: -5deg;
+  --offset: 22px;
+
+  animation-delay: 200ms;
+}
+
+/* Postal central */
+
+.memory-center {
+  --rotation: 1deg;
+  --offset: -14px;
+
+  z-index: 2;
+
+  animation-delay: 350ms;
+}
+
+/* Postal derecha */
+
+.memory-right {
+  --rotation: 5deg;
+  --offset: 25px;
+
+  animation-delay: 500ms;
+}
+
+/* ==========================================
+   INTERACCIÓN DE POSTALES
+========================================== */
+
+.memory-card:hover,
+.memory-card:focus-within {
+  z-index: 5;
+
+  transform: translateY(-16px) rotate(0deg);
+
+  box-shadow:
+    0 12px 25px rgba(38, 43, 40, 0.08),
+    0 30px 55px rgba(38, 43, 40, 0.14);
+}
+
+/* ==========================================
+   FOTOGRAFÍAS
+========================================== */
+
+.memory-image {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  background: var(--sand);
+}
+
+.memory-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(0.85);
+
+  transition:
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 600ms ease;
+}
+
+.memory-card:hover img {
+  transform: scale(1.055);
+
+  filter: saturate(1);
+}
+
+/* Textura sutil sobre la fotografía */
+
+.memory-image::after {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(230, 214, 189, 0.05);
+
+  pointer-events: none;
+
+  content: '';
+}
+
+/* ==========================================
+   PIE DE POSTAL
+========================================== */
+
+.memory-caption {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 16px 7px 6px;
+
+  text-align: left;
+}
+
+.memory-caption h3 {
+  margin: 0 0 5px;
+
+  color: var(--carbon);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  font-weight: 500;
+
+  line-height: 1.1;
+}
+
+.memory-caption p {
+  margin: 0;
+
+  color: #6d7069;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 9px;
+
+  line-height: 1.6;
+}
+
+.memory-number {
+  flex-shrink: 0;
+
+  color: var(--terracotta);
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+
+  opacity: 0.8;
+}
+
+/* ==========================================
+   CRÉDITOS FOTOGRÁFICOS
+========================================== */
+
+.photo-credit {
+  display: block;
+
+  padding: 6px 7px 0;
+
+  color: #62675f;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 9px;
+
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+
+  overflow-wrap: anywhere;
+
+  transition: color 250ms ease;
+}
+
+.photo-credit:hover {
+  color: var(--calakmul);
+
+  text-decoration: underline;
+}
+
+.photo-credit:focus-visible {
+  outline: 1px solid var(--calakmul);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   CIERRE NARRATIVO
+========================================== */
+
+.intro-bottom {
+  margin: 50px auto 0;
+}
+
+.intro-description {
+  max-width: 540px;
+
+  margin: 0 auto;
+
+  color: #62675f;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  font-weight: 400;
+
+  line-height: 1.9;
+
+  text-wrap: balance;
+
+  animation: text-reveal 900ms ease 600ms both;
+}
+
+/* ==========================================
+   DIVISOR EDITORIAL
+========================================== */
+
+.intro-divider {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  margin: 40px auto 0;
+}
+
+.intro-divider span:not(.divider-diamond) {
+  display: block;
+
+  width: 65px;
+  height: 1px;
+
+  background: #c8bba7;
+}
+
+.divider-diamond {
+  width: 5px;
+  height: 5px;
+
+  background: var(--terracotta);
+
+  transform: rotate(45deg);
+}
+
+/* ==========================================
+   ANIMACIÓN DE TEXTOS
+========================================== */
+
+@keyframes text-reveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   ANIMACIÓN DE POSTALES
+========================================== */
+
+@keyframes postcard-reveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(calc(var(--offset, 0px) + 40px))
+      rotate(0deg)
+      scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(var(--offset, 0px))
+      rotate(var(--rotation, 0deg))
+      scale(1);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE — TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+  .intro {
+    padding: 75px 30px 50px;
+  }
+
+  .postcards-gallery {
+    max-width: 700px;
+    gap: 22px;
+  }
+
+  .memory-card {
+    padding: 8px 8px 12px;
+  }
+
+  .memory-left {
+    --rotation: -4deg;
+  }
+
+  .memory-right {
+    --rotation: 4deg;
+  }
+
+  .memory-caption {
+    padding: 13px 4px 6px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE — MÓVILES
+========================================== */
+
+@media (max-width: 600px) {
+  .intro {
+    padding: 60px 20px 40px;
+  }
+
+  .intro-header {
+    margin-bottom: 28px;
+  }
+
+  .intro-label {
+    margin-bottom: 18px;
+
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  .intro-title {
+    font-size: clamp(2.4rem, 9vw, 3.5rem);
+
+    line-height: 1.1;
+  }
+
+  .postcards-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    max-width: 350px;
+
+    padding: 15px 8px;
+  }
+
+  .memory-card {
+    padding: 6px 6px 10px;
+  }
+
+  .memory-left {
+    --rotation: -4deg;
+    --offset: 8px;
+  }
+
+  .memory-center {
+    --rotation: 3deg;
+    --offset: -5px;
+  }
+
+  .memory-right {
+    grid-column: 1 / -1;
+
+    justify-self: center;
+
+    width: calc(50% - 10px);
+
+    --rotation: -3deg;
+    --offset: 0px;
+  }
+
+  .memory-caption {
+    gap: 4px;
+
+    padding: 12px 3px 4px;
+  }
+
+  .memory-caption h3 {
+    font-size: 1.15rem;
+  }
+
+  .memory-caption p {
+    font-size: 8px;
+  }
+
+  .memory-number {
+    font-size: 1rem;
+  }
+
+  .photo-credit {
+    padding: 4px 3px 0;
+
+    font-size: 8px;
+  }
+
+  .intro-bottom {
+    margin-top: 30px;
+  }
+
+  .intro-description {
+    max-width: 320px;
+
+    font-size: 0.85rem;
+  }
+
+  .intro-divider {
+    margin-top: 28px;
+  }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-label,
+  .intro-title,
+  .intro-description,
+  .memory-card,
+  .memory-image img {
+    animation: none;
+    transition: none;
+    opacity: 1;
+  }
+
+  .memory-card:hover,
+  .memory-card:focus-within {
+    transform:
+      translateY(var(--offset, 0px))
+      rotate(var(--rotation, 0deg));
+  }
+
+  .memory-card:hover img {
+    transform: none;
+  }
+}

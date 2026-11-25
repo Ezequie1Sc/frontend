@@ -1,0 +1,697 @@
+
+/* ==========================================
+   RAÍCES — DESTINATION SLIDER
+   Diseño editorial y cinematográfico
+========================================== */
+
+:host {
+  display: block;
+}
+
+/* ==========================================
+   SECCIÓN PRINCIPAL
+========================================== */
+
+.slider-section {
+  position: relative;
+  outline: none;
+}
+
+.slider-section:focus-visible {
+  outline: 2px solid #c47d65;
+  outline-offset: 6px;
+}
+
+.section-head {
+  margin-bottom: 2rem;
+}
+
+.lead {
+  max-width: 42rem;
+  margin-top: 0.75rem;
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+========================================== */
+
+.slider-container {
+  position: relative;
+
+  width: 100%;
+  height: clamp(460px, 65vh, 650px);
+
+  overflow: hidden;
+  isolation: isolate;
+
+  border-radius: 12px;
+  background: #284b40;
+
+  box-shadow: 0 24px 60px rgba(38, 43, 40, 0.08);
+
+  touch-action: pan-y;
+}
+
+/* ==========================================
+   FOTOGRAFÍAS PRINCIPALES
+========================================== */
+
+.main-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.main-photo img {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  opacity: 0;
+  transform: scale(1.025);
+
+  transition:
+    opacity 700ms ease,
+    transform 1400ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  pointer-events: none;
+}
+
+/* Fotografía del destino seleccionado */
+
+.main-photo img.active-photo {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+/* ==========================================
+   DEGRADADO CINEMATOGRÁFICO
+========================================== */
+
+.content-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 29, 24, 0.82) 0%,
+      rgba(15, 29, 24, 0.58) 25%,
+      rgba(15, 29, 24, 0.22) 55%,
+      rgba(15, 29, 24, 0.02) 85%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(15, 29, 24, 0.25),
+      transparent 30%
+    );
+}
+
+/* ==========================================
+   CONTENIDO EDITORIAL
+========================================== */
+
+.editorial {
+  position: absolute;
+  z-index: 3;
+
+  top: 50%;
+  left: 7%;
+
+  width: 55%;
+  max-width: 580px;
+
+  color: #f6f3eb;
+
+  opacity: 0;
+
+  transform: translateY(calc(-50% + 14px));
+
+  transition:
+    opacity 450ms ease,
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Entrada del contenido */
+
+.editorial.enter {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+/* ==========================================
+   NOMBRE DEL DESTINO
+========================================== */
+
+.dest-name {
+  margin: 0 0 1.25rem;
+
+  color: #f6f3eb;
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 5.4vw, 5.2rem);
+  font-weight: 400;
+
+  line-height: 1;
+  letter-spacing: -0.035em;
+
+  text-wrap: balance;
+}
+
+/* ==========================================
+   DESCRIPCIÓN
+========================================== */
+
+.desc {
+  max-width: 380px;
+
+  margin: 0;
+
+  color: rgba(246, 243, 235, 0.9);
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+
+  line-height: 1.85;
+}
+
+/* ==========================================
+   ENLACE — CREAR POSTAL
+========================================== */
+
+.postcard-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+  padding: 0 0 0.65rem;
+
+  border: none;
+  border-bottom: 1px solid rgba(230, 214, 189, 0.65);
+
+  background: transparent;
+  color: #f6f3eb;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    color 300ms ease,
+    border-color 300ms ease;
+}
+
+.postcard-link svg {
+  flex-shrink: 0;
+  transition: transform 350ms ease;
+}
+
+.postcard-link:hover {
+  color: #e6d6bd;
+  border-color: #e6d6bd;
+}
+
+.postcard-link:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.postcard-link:focus-visible {
+  outline: 1px solid #e6d6bd;
+  outline-offset: 6px;
+}
+
+/* ==========================================
+   FOTOGRAFÍAS LATERALES
+========================================== */
+
+.floating-cards {
+  position: absolute;
+  z-index: 4;
+
+  top: 50%;
+  right: 5%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  transform: translateY(-50%);
+}
+
+/* Tarjetas individuales */
+
+.float-card {
+  position: relative;
+
+  display: block;
+
+  width: clamp(105px, 12vw, 155px);
+  max-width: 100%;
+  aspect-ratio: 3 / 4;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background: #284b40;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+
+  cursor: pointer;
+
+  transition:
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 500ms ease,
+    border-color 300ms ease;
+
+  animation: card-enter 650ms
+    cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* Segunda tarjeta */
+
+.float-card.card-2 {
+  animation-delay: 100ms;
+}
+
+/* Imagen interior */
+
+.float-card img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 700ms ease;
+}
+
+/* ==========================================
+   INTERACCIÓN DE TARJETAS
+========================================== */
+
+.float-card:hover:not(:disabled) {
+  transform: translateX(-6px);
+
+  border-color: rgba(230, 214, 189, 0.75);
+
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.float-card:hover:not(:disabled) img {
+  transform: scale(1.07);
+}
+
+.float-card:focus-visible {
+  outline: 2px solid #e6d6bd;
+  outline-offset: 4px;
+}
+
+.float-card:disabled {
+  cursor: default;
+}
+
+/* ==========================================
+   NOMBRE DE TARJETAS AL PASAR EL CURSOR
+========================================== */
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+
+  background: linear-gradient(
+    0deg,
+    rgba(15, 29, 24, 0.85),
+    transparent 65%
+  );
+
+  pointer-events: none;
+
+  transition: opacity 300ms ease;
+}
+
+.card-name {
+  position: absolute;
+
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+
+  color: #f6f3eb;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+
+  line-height: 1.4;
+  text-align: left;
+
+  opacity: 0;
+
+  transform: translateY(6px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
+}
+
+.float-card:hover .card-overlay,
+.float-card:focus-visible .card-overlay {
+  opacity: 1;
+}
+
+.float-card:hover .card-name,
+.float-card:focus-visible .card-name {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   ANIMACIÓN DE ENTRADA DE TARJETAS
+========================================== */
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================
+   CONTROLES DE NAVEGACIÓN
+   Únicamente flechas
+========================================== */
+
+.controls {
+  position: absolute;
+  z-index: 5;
+
+  bottom: 7%;
+  left: 7%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 1.5rem;
+
+  color: #f6f3eb;
+}
+
+/* Botones anterior y siguiente */
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #f6f3eb;
+
+  cursor: pointer;
+
+  transition:
+    background 300ms ease,
+    opacity 250ms ease,
+    transform 300ms ease;
+}
+
+.nav-btn svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Interacción de las flechas */
+
+.nav-btn:hover:not(:disabled) {
+  background: rgba(246, 243, 235, 0.12);
+}
+
+.nav-btn:first-child:hover:not(:disabled) {
+  transform: translateX(-4px);
+}
+
+.nav-btn:last-child:hover:not(:disabled) {
+  transform: translateX(4px);
+}
+
+.nav-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.nav-btn:focus-visible {
+  outline: 1px solid #e6d6bd;
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   RESPONSIVE — PANTALLAS MEDIANAS
+========================================== */
+
+@media (max-width: 1100px) {
+  .slider-container {
+    height: 500px;
+  }
+
+  .editorial {
+    width: 58%;
+  }
+
+  .dest-name {
+    font-size: clamp(3rem, 5.5vw, 4.5rem);
+  }
+
+  .float-card {
+    width: 130px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE — TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+  .slider-container {
+    height: 520px;
+  }
+
+  .editorial {
+    left: 6%;
+    width: 60%;
+  }
+
+  .dest-name {
+    font-size: clamp(2.8rem, 6vw, 4rem);
+  }
+
+  .desc {
+    max-width: 320px;
+  }
+
+  .floating-cards {
+    right: 5%;
+    gap: 12px;
+  }
+
+  .float-card {
+    width: 110px;
+  }
+
+  .controls {
+    left: 6%;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE — DISPOSITIVOS MÓVILES
+========================================== */
+
+@media (max-width: 600px) {
+  .section-head {
+    margin-bottom: 1.5rem;
+  }
+
+  .slider-container {
+    height: 560px;
+    border-radius: 8px;
+  }
+
+  /* Degradado vertical */
+
+  .content-gradient {
+    background: linear-gradient(
+      0deg,
+      rgba(15, 29, 24, 0.95) 0%,
+      rgba(15, 29, 24, 0.65) 42%,
+      rgba(15, 29, 24, 0.1) 100%
+    );
+  }
+
+  /* Contenido editorial */
+
+  .editorial {
+    top: auto;
+    bottom: 24%;
+    left: 7%;
+
+    width: 86%;
+    max-width: none;
+
+    transform: translateY(12px);
+  }
+
+  .editorial.enter {
+    transform: translateY(0);
+  }
+
+  .dest-name {
+    margin-bottom: 1rem;
+
+    font-size: clamp(2.6rem, 9vw, 3.8rem);
+    line-height: 1;
+  }
+
+  .desc {
+    max-width: 290px;
+
+    font-size: 0.8rem;
+    line-height: 1.75;
+  }
+
+  .postcard-link {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* Fotografías superiores en móvil */
+
+  .floating-cards {
+    top: 5%;
+    right: 6%;
+
+    flex-direction: row;
+    gap: 10px;
+
+    transform: none;
+  }
+
+  .float-card {
+    width: 75px;
+    border-radius: 5px;
+  }
+
+  .card-name,
+  .card-overlay {
+    display: none;
+  }
+
+  /* Navegación */
+
+  .controls {
+    bottom: 6%;
+    left: 7%;
+
+    gap: 1rem;
+  }
+
+  .nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE — MÓVILES PEQUEÑOS
+========================================== */
+
+@media (max-width: 360px) {
+  .slider-container {
+    height: 580px;
+  }
+
+  .dest-name {
+    font-size: 2.4rem;
+  }
+
+  .desc {
+    font-size: 0.78rem;
+  }
+
+  .float-card {
+    width: 65px;
+  }
+}
+
+/* ==========================================
+   ACCESIBILIDAD — MOVIMIENTO REDUCIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .main-photo img,
+  .editorial,
+  .float-card,
+  .float-card img,
+  .card-name,
+  .card-overlay,
+  .postcard-link,
+  .postcard-link svg,
+  .nav-btn {
+    transition: none;
+    animation: none;
+  }
+
+  .float-card:hover:not(:disabled),
+  .float-card:hover:not(:disabled) img,
+  .postcard-link:hover svg,
+  .nav-btn:hover:not(:disabled) {
+    transform: none;
+  }
+}

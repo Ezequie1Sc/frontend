@@ -1,0 +1,84 @@
+
+<section class="hero">
+
+    <!-- IMAGEN DE RESPALDO -->
+
+    <img
+        class="hero-fallback"
+        [src]="media.cloudUrl(state.destinations[0], 1600)"
+        (error)="media.fallback($event, state.destinations[0])"
+        alt="San Francisco de Campeche"
+        fetchpriority="high"
+    />
+
+    <!-- VIDEO DE FONDO -->
+
+    <video
+        #heroVideo
+        class="hero-video"
+        [class.video-ready]="videoReady()"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        disablepictureinpicture
+        disableremoteplayback
+        aria-hidden="true"
+        (playing)="onVideoReady()"
+        (error)="onVideoError()"
+    >
+        <source
+            src="/hero.mp4"
+            type="video/mp4"
+        />
+    </video>
+
+    <!-- DEGRADADO CINEMATOGRÁFICO -->
+
+    <div class="hero-overlay"></div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <div class="hero-copy" #heroCopy>
+
+        <h1>
+            {{ state.t(
+                'Una tierra de historias vivas.',
+                'A land of living stories.'
+            ) }}
+        </h1>
+
+        <p>
+            {{ state.t(
+                'Cuatro destinos. Una identidad. Infinitos recuerdos.',
+                'Four destinations. One identity. Endless memories.'
+            ) }}
+        </p>
+
+        <a class="cta hero-cta" href="#explore">
+
+            <span>
+                {{ state.t(
+                    'Comienza tu viaje',
+                    'Begin your journey'
+                ) }}
+            </span>
+
+            <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                aria-hidden="true"
+            >
+                <path d="M7 17L17 7M7 7h10v10"/>
+            </svg>
+
+        </a>
+
+    </div>
+
+</section>

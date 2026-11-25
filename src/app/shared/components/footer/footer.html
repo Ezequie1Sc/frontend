@@ -1,0 +1,350 @@
+
+<footer id="credits" class="raices-footer">
+
+    <!-- IMAGEN DE FONDO -->
+
+    <div class="footer-background">
+        <img
+            [src]="backgroundImage"
+            (error)="onBackgroundError($event)"
+            [alt]="backgroundDestination.alt"
+            loading="lazy"
+        />
+    </div>
+
+    <div class="footer-overlay"></div>
+
+    <div class="footer-container">
+
+        <!-- CIERRE EDITORIAL -->
+
+        <section class="footer-hero">
+
+           
+
+
+            <h2>
+                {{ state.t(
+                    'Nuestras raíces.',
+                    'Our roots.'
+                ) }}
+
+                <span>
+                    {{ state.t(
+                        'Nuestra historia.',
+                        'Our story.'
+                    ) }}
+                </span>
+            </h2>
+
+            <p>
+                {{ state.t(
+                    'Campeche es más que un destino. Es la memoria de quienes lo habitan, la belleza de sus paisajes y las historias que merecen ser compartidas.',
+                    'Campeche is more than a destination. It is the memory of its people, the beauty of its landscapes and the stories that deserve to be shared.'
+                ) }}
+            </p>
+
+            <a href="#explore" class="footer-cta">
+
+                <span>
+                    {{ state.t(
+                        'Sigue explorando',
+                        'Keep exploring'
+                    ) }}
+                </span>
+
+                <span class="cta-icon">
+                    <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                    >
+                        <path d="M7 17L17 7M7 7h10v10"/>
+                    </svg>
+                </span>
+
+            </a>
+
+        </section>
+
+        <!-- NAVEGACIÓN Y PROYECTO -->
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#" class="brand-name">
+                    RAÍCES
+                </a>
+
+                <span class="brand-subtitle">
+                    DISCOVER CAMPECHE
+                </span>
+
+                <p>
+                    {{ state.t(
+                        'Una experiencia digital dedicada a celebrar la identidad, la cultura y el patrimonio de Campeche, México.',
+                        'A digital experience dedicated to celebrating the identity, culture and heritage of Campeche, Mexico.'
+                    ) }}
+                </p>
+
+            </div>
+
+            <!-- NAVEGACIÓN -->
+
+            <div class="footer-column">
+
+                <h3>
+                    {{ state.t('Explorar', 'Explore') }}
+                </h3>
+
+                <a href="#">
+                    {{ state.t('Inicio', 'Home') }}
+                </a>
+
+                <a href="#explore">
+                    {{ state.t('Destinos', 'Destinations') }}
+                </a>
+
+                <a href="#map">
+                    {{ state.t('Mapa interactivo', 'Interactive map') }}
+                </a>
+
+                <a href="#studio">
+                    {{ state.t('Crear postal', 'Create postcard') }}
+                </a>
+
+            </div>
+
+            <!-- TECNOLOGÍA -->
+
+            <div class="footer-column">
+
+                <h3>
+                    {{ state.t('Tecnología', 'Technology') }}
+                </h3>
+
+                <a
+                    href="https://cloudinary.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Cloudinary
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <a
+                    href="https://angular.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Angular
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <a
+                    href="https://commons.wikimedia.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Wikimedia Commons
+                    <span class="external-arrow">↗</span>
+                </a>
+
+            </div>
+
+            <!-- PROYECTO -->
+
+            <div class="footer-column">
+
+                <h3>
+                    {{ state.t('Proyecto', 'Project') }}
+                </h3>
+
+                <a
+                    href="https://cloudinarycreators.com/hackathons/november-mini-hack-2026"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    November Mini-Hack 2026
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <a
+                    [href]="githubUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {{ state.t('Desarrollador', 'Developer') }}
+                    <span class="external-arrow">↗</span>
+                </a>
+
+                <button
+                    type="button"
+                    class="credits-toggle"
+                    (click)="toggleCredits()"
+                    [attr.aria-expanded]="creditsOpen()"
+                    aria-controls="photography-credits"
+                >
+                    {{ state.t(
+                        'Créditos fotográficos',
+                        'Photography credits'
+                    ) }}
+
+                    <span>
+                        {{ creditsOpen() ? '−' : '+' }}
+                    </span>
+                </button>
+
+                <span class="hackathon-label">
+                    CELEBRATE WHERE YOU'RE FROM!
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- CRÉDITOS FOTOGRÁFICOS -->
+
+        @if (creditsOpen()) {
+
+            <section
+                id="photography-credits"
+                class="credits-content"
+            >
+
+                <h3>
+                    {{ state.t(
+                        'Fotografías y licencias',
+                        'Photographs and licenses'
+                    ) }}
+                </h3>
+
+                <div class="credits-grid">
+
+                    <!-- FOTOGRAFÍA DEL FOOTER -->
+
+                    <div class="credit-item">
+
+                        <a
+                            [href]="backgroundDestination.source"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {{ state.t(
+                                'Atardecer en Campeche',
+                                'Sunset in Campeche'
+                            ) }}
+                            — {{ backgroundDestination.author }}
+                        </a>
+
+                        <a
+                            href="https://creativecommons.org/licenses/by-sa/4.0/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="license"
+                        >
+                            CC BY-SA 4.0
+                        </a>
+
+                    </div>
+
+                    <!-- FOTOGRAFÍAS DE DESTINOS -->
+
+                    @for (d of state.destinations; track d.id) {
+
+                        <div class="credit-item">
+
+                            <a
+                                [href]="d.source"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {{ d.name }} — {{ d.author }}
+                            </a>
+
+                            <a
+                                [href]="'https://creativecommons.org/licenses/by-sa/' + d.license + '/'"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="license"
+                            >
+                                CC BY-SA {{ d.license }}
+                            </a>
+
+                        </div>
+
+                    }
+
+                </div>
+
+                <p class="license-note">
+                    {{ state.t(
+                        'Las postales adaptadas conservan las condiciones de licencia de las fotografías originales.',
+                        'Adapted postcards retain the licensing conditions of the original photographs.'
+                    ) }}
+                </p>
+
+            </section>
+
+        }
+
+        <!-- MARCA GIGANTE -->
+
+        <div class="footer-wordmark" aria-hidden="true">
+            RAÍCES
+        </div>
+
+        <!-- BARRA INFERIOR -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © {{ year }} RAÍCES · Campeche, México.
+            </p>
+
+            <a
+                [href]="githubUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="developer-link"
+            >
+
+                <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                >
+                    <path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15a10.78 10.78 0 0 1 5.64 0c2.15-1.46 3.1-1.15 3.1-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.63 5.27-5.14 5.55.4.35.76 1.03.76 2.08v3.11c0 .3.2.65.77.54A11.25 11.25 0 0 0 12 .75z"/>
+                </svg>
+
+                <span>
+                    {{ state.t(
+                        'Diseñado y desarrollado por',
+                        'Designed and developed by'
+                    ) }}
+
+                    <strong>Ezequiel Salazar</strong>
+                </span>
+
+                <span class="external-arrow">↗</span>
+
+            </a>
+
+            <p class="independent-project">
+                {{ state.t(
+                    'Proyecto cultural independiente.',
+                    'Independent cultural project.'
+                ) }}
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>

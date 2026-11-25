@@ -1,0 +1,656 @@
+
+/* ========================================
+   RAÍCES — FOOTER EDITORIAL
+======================================== */
+
+:host {
+    display: block;
+}
+
+.raices-footer {
+    --forest: #284b40;
+    --colonial: #f6f3eb;
+    --sand: #e6d6bd;
+    --terracotta: #c47d65;
+    --muted: #a9b6ae;
+
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    overflow: hidden;
+
+    background: #101c17;
+    color: var(--colonial);
+
+    font-family: 'Manrope', sans-serif;
+}
+
+/* ========================================
+   FOTOGRAFÍA DE FONDO
+======================================== */
+
+.footer-background {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.footer-background img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 40%;
+
+    filter: saturate(0.75);
+}
+
+.footer-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(9, 23, 18, 0.32) 0%,
+            rgba(9, 23, 18, 0.48) 25%,
+            rgba(9, 23, 18, 0.85) 58%,
+            #101c17 85%,
+            #101c17 100%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(10, 22, 17, 0.2),
+            transparent 50%,
+            rgba(10, 22, 17, 0.2)
+        );
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+======================================== */
+
+.footer-container {
+    position: relative;
+
+    width: min(88%, 1320px);
+
+    margin: 0 auto;
+}
+
+/* ========================================
+   CIERRE EDITORIAL
+======================================== */
+
+.footer-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 110px 20px 100px;
+}
+
+.footer-eyebrow {
+    color: var(--sand);
+
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
+
+.decorative-line {
+    width: 1px;
+    height: 35px;
+
+    margin: 24px auto;
+
+    background: rgba(230, 214, 189, 0.6);
+}
+
+.footer-hero h2 {
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3.8rem, 7vw, 7.5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+
+    color: var(--colonial);
+}
+
+.footer-hero h2 span {
+    display: block;
+
+    color: var(--sand);
+    font-style: italic;
+}
+
+.footer-hero p {
+    max-width: 490px;
+
+    margin: 30px auto 32px;
+
+    font-size: 13px;
+    line-height: 1.9;
+
+    color: rgba(246, 243, 235, 0.8);
+}
+
+/* ========================================
+   BOTÓN PRINCIPAL
+======================================== */
+
+.footer-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    min-width: 210px;
+
+    padding: 7px 7px 7px 20px;
+
+    background: var(--colonial);
+    color: #17281f;
+
+    border: 1px solid var(--colonial);
+    border-radius: 4px;
+
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background 300ms ease,
+        color 300ms ease,
+        transform 300ms ease;
+}
+
+.cta-icon {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: var(--forest);
+    color: var(--colonial);
+
+    border-radius: 2px;
+
+    transition:
+        background 300ms ease,
+        transform 300ms ease;
+}
+
+.footer-cta:hover {
+    transform: translateY(-3px);
+
+    background: var(--sand);
+}
+
+.footer-cta:hover .cta-icon {
+    background: #17281f;
+}
+
+.footer-cta:hover .cta-icon svg {
+    transform: translate(1px, -1px);
+}
+
+.cta-icon svg {
+    transition: transform 250ms ease;
+}
+
+/* ========================================
+   NAVEGACIÓN INFERIOR
+======================================== */
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.65fr 1fr 1fr 1.2fr;
+    gap: 45px;
+
+    padding: 45px 0 60px;
+
+    border-top: 1px solid rgba(246, 243, 235, 0.2);
+}
+
+.footer-brand {
+    min-width: 0;
+}
+
+.brand-name {
+    display: inline-block;
+
+    color: var(--colonial);
+
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 37px;
+    font-weight: 500;
+    line-height: 1;
+
+    text-decoration: none;
+    letter-spacing: 0.03em;
+}
+
+.brand-subtitle {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 8px;
+    letter-spacing: 0.25em;
+
+    color: var(--sand);
+}
+
+.footer-brand p {
+    max-width: 250px;
+
+    margin: 22px 0 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* ========================================
+   COLUMNAS
+======================================== */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 13px;
+}
+
+.footer-column h3 {
+    margin: 0 0 8px;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    color: var(--colonial);
+}
+
+.footer-column a,
+.credits-toggle {
+    color: var(--muted);
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    text-decoration: none;
+
+    transition: color 250ms ease;
+}
+
+.footer-column a:hover,
+.credits-toggle:hover {
+    color: var(--colonial);
+}
+
+.external-arrow {
+    display: inline-block;
+
+    margin-left: 3px;
+
+    font-size: 11px;
+
+    transition: transform 250ms ease;
+}
+
+a:hover .external-arrow {
+    transform: translate(2px, -2px);
+}
+
+.hackathon-label {
+    display: block;
+
+    margin-top: 12px;
+
+    color: var(--sand);
+
+    font-size: 8px;
+    line-height: 1.8;
+    letter-spacing: 0.12em;
+}
+
+/* ========================================
+   CRÉDITOS DESPLEGABLES
+======================================== */
+
+.credits-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+    text-align: left;
+}
+
+.credits-toggle span {
+    font-size: 15px;
+    color: var(--sand);
+}
+
+.credits-content {
+    padding: 28px;
+
+    margin-bottom: 35px;
+
+    background: rgba(246, 243, 235, 0.035);
+    border: 1px solid rgba(246, 243, 235, 0.12);
+    border-radius: 6px;
+
+    animation: revealCredits 350ms ease both;
+}
+
+.credits-content h3 {
+    margin: 0 0 24px;
+
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+
+    color: var(--colonial);
+}
+
+.credits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px 35px;
+}
+
+.credit-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid rgba(246, 243, 235, 0.08);
+}
+
+.credit-item a {
+    color: var(--muted);
+
+    font-size: 11px;
+    line-height: 1.7;
+
+    text-decoration: none;
+}
+
+.credit-item a:hover {
+    color: var(--colonial);
+    text-decoration: underline;
+}
+
+.credit-item .license {
+    color: var(--sand);
+    font-size: 10px;
+}
+
+.license-note {
+    margin: 22px 0 0;
+
+    font-size: 10px;
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+/* ========================================
+   LOGOTIPO GIGANTE
+======================================== */
+
+.footer-wordmark {
+    display: block;
+
+    width: 100%;
+
+    padding: 20px 0 35px;
+
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(4rem, 22vw, 20rem);
+    font-weight: 500;
+    line-height: 0.85;
+    letter-spacing: -0.065em;
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: var(--colonial);
+
+    user-select: none;
+}
+
+/* ========================================
+   BARRA INFERIOR
+======================================== */
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 24px 0 30px;
+
+    border-top: 1px solid rgba(246, 243, 235, 0.18);
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.developer-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    text-decoration: none;
+
+    transition: color 250ms ease;
+}
+
+.developer-link strong {
+    color: var(--colonial);
+    font-weight: 600;
+}
+
+.developer-link svg {
+    flex-shrink: 0;
+}
+
+.developer-link:hover {
+    color: var(--colonial);
+}
+
+/* ========================================
+   ACCESIBILIDAD
+======================================== */
+
+.raices-footer a:focus-visible,
+.raices-footer button:focus-visible {
+    outline: 2px solid var(--sand);
+    outline-offset: 5px;
+}
+
+/* ========================================
+   ANIMACIONES
+======================================== */
+
+@keyframes revealCredits {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px;
+    }
+
+    .footer-hero {
+        padding: 90px 10px 75px;
+    }
+
+    .footer-bottom {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .footer-wordmark {
+        font-size: 22vw;
+    }
+}
+
+/* ========================================
+   DISPOSITIVOS MÓVILES
+======================================== */
+
+@media (max-width: 600px) {
+
+    .footer-container {
+        width: 88%;
+    }
+
+    .footer-hero {
+        padding: 75px 0 65px;
+    }
+
+    .footer-eyebrow {
+        font-size: 8px;
+        letter-spacing: 0.2em;
+    }
+
+    .footer-hero h2 {
+        font-size: clamp(2.8rem, 11vw, 4.5rem);
+    }
+
+    .footer-hero p {
+        font-size: 12px;
+        margin: 24px auto 28px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 35px 20px;
+
+        padding: 35px 0;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+    .footer-column {
+        gap: 12px;
+    }
+
+    .footer-column h3 {
+        font-size: 12px;
+    }
+
+    .footer-column a,
+    .credits-toggle {
+        font-size: 11px;
+    }
+
+    .credits-content {
+        padding: 20px;
+    }
+
+    .credits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-wordmark {
+        font-size: 22vw;
+        padding: 25px 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 22px 0 30px;
+    }
+
+    .footer-background img {
+        object-position: 60% center;
+    }
+}
+
+/* ========================================
+   MOVIMIENTO REDUCIDO
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .raices-footer *,
+    .raices-footer *::before,
+    .raices-footer *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
