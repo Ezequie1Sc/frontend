@@ -1,9 +1,29 @@
-import { Component, inject } from '@angular/core';
-import { PostcardService } from '../../core/services/postcard.service';
-import { CloudinaryService } from '../../core/services/cloudinary.service';
+import {
+  Component,
+  inject
+} from '@angular/core';
+
 import { FormsModule } from '@angular/forms';
-@Component({ selector: 'app-postcards', standalone: true, imports: [FormsModule], templateUrl: './postcards.html', styleUrl: './postcards.css' })
+
+import {
+  PostcardService
+} from '../../core/services/postcard.service';
+
+import {
+  CloudinaryService
+} from '../../core/services/cloudinary.service';
+
+@Component({
+  selector: 'app-postcards',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './postcards.html',
+  styleUrl: './postcards.css'
+})
 export class Postcards {
-    state = inject(PostcardService);
-    media = inject(CloudinaryService);
+
+  readonly state = inject(PostcardService);
+
+  readonly media = inject(CloudinaryService);
+
 }
