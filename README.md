@@ -1,3 +1,4 @@
+
 # RAÍCES — Discover Campeche
 
 <div align="center">
@@ -5,11 +6,11 @@
   <h3>A land of living stories.</h3>
 
   <p>
-    An interactive cultural experience celebrating the history,
-    landscapes, and identity of Campeche, Mexico.
+    An immersive digital experience celebrating the history,
+    landscapes, traditions, and cultural identity of Campeche, Mexico.
   </p>
 
-  <img src="public/assets/hero.png" alt="RAÍCES cinematic homepage" width="100%" />
+  <img src="public/assets/webp/hero.webp" alt="RAÍCES cinematic homepage" width="100%" />
 
   <br />
   <br />
@@ -25,7 +26,37 @@
 
   *Celebrate Where You're From!*
 
+  <a href="https://frontend-iche.vercel.app/">
+    <img src="https://img.shields.io/badge/Live_Demo-Explore_RAICES-284B40?style=for-the-badge&logo=vercel&logoColor=white" alt="Explore RAÍCES live" />
+  </a>
+
+  <a href="https://www.youtube.com/watch?v=XDvKn_bbwCA">
+    <img src="https://img.shields.io/badge/Watch-Project_Demo-262B28?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch project demonstration" />
+  </a>
+
 </div>
+
+---
+
+## Table of Contents
+
+- [About the Project](#about-the-project)
+- [Inspiration](#inspiration)
+- [The Experience](#the-experience)
+- [Key Features](#key-features)
+- [Cloudinary Integration](#cloudinary-integration)
+- [Documentation Asset Optimization](#documentation-asset-optimization)
+- [Design Philosophy](#design-philosophy)
+- [Technology Stack](#technology-stack)
+- [Application Architecture](#application-architecture)
+- [Getting Started](#getting-started)
+- [Internationalization](#internationalization)
+- [Responsive Experience](#responsive-experience)
+- [Photography and Attribution](#photography-and-attribution)
+- [Hackathon Submission](#hackathon-submission)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -35,7 +66,9 @@
 
 Rather than creating a conventional tourism website, RAÍCES presents the region through an immersive editorial experience where photography, storytelling, interactive exploration, and personalized digital postcards come together.
 
-The project invites visitors to discover a territory shaped by ancient Maya civilizations, colonial architecture, tropical landscapes, and coastal traditions.
+The project invites visitors to discover a territory shaped by ancient Maya civilizations, colonial architecture, tropical landscapes, traditional craftsmanship, riverside communities, and coastal traditions.
+
+Through modern web technologies and Cloudinary-powered media delivery, RAÍCES explores how digital experiences can help share cultural identity with a global audience.
 
 > Every place has a story. Every story has roots.
 
@@ -51,7 +84,13 @@ As a developer from Campeche, I wanted to create an experience that celebrates t
 
 RAÍCES is my way of sharing a part of Mexico that deserves to be discovered, remembered, and celebrated.
 
-<img src="public/assets/wherehistory.png" alt="RAÍCES cultural introduction and editorial storytelling" width="100%" />
+The project is built around three fundamental ideas:
+
+- **Discover:** Explore the landscapes, communities, and cultural destinations of Campeche.
+- **Remember:** Transform cultural exploration into meaningful visual memories.
+- **Celebrate:** Share regional identity through creative digital experiences.
+
+<img src="public/assets/webp/wherehistory.webp" alt="RAÍCES cultural introduction and editorial storytelling" width="100%" />
 
 ---
 
@@ -70,15 +109,17 @@ The interface combines:
 - Minimal visual distractions.
 - Bilingual storytelling.
 
-<img src="public/assets/hero.png" alt="Cinematic introduction to Campeche" width="100%" />
+The objective is to establish an emotional connection with the region before visitors begin exploring individual destinations.
+
+<img src="public/assets/webp/hero.webp" alt="Cinematic introduction to Campeche" width="100%" />
 
 ### 02 — Four Views of Campeche
 
 An interactive destination carousel allows visitors to discover four essential perspectives of the region.
 
-Each destination includes authentic photography, cultural descriptions, navigation controls, and direct access to the postcard creation experience.
+Each destination includes authentic photography, cultural descriptions, navigation controls, and access to the postcard creation experience.
 
-<img src="public/assets/fourview.png" alt="Interactive destination carousel" width="100%" />
+<img src="public/assets/webp/fourview.webp" alt="Interactive destination carousel showcasing Campeche" width="100%" />
 
 | Destination | Cultural Identity |
 | --- | --- |
@@ -87,31 +128,105 @@ Each destination includes authentic photography, cultural descriptions, navigati
 | Calakmul | Archaeology and tropical nature |
 | Isla Aguada | Coastal landscapes and traditions |
 
+These destinations introduce the diversity of Campeche through photography and editorial storytelling.
+
 ### 03 — Explore Our Roots
 
 The interactive exploration section connects cultural storytelling with geographic discovery.
 
 Visitors can navigate between destinations, discover their locations, read cultural descriptions, and select a place to create a personalized postcard.
 
-<img src="public/assets/Explore.png" alt="Interactive cultural exploration map" width="100%" />
+The geographic experience combines interactive SVG visualization, destination data, and reactive application state.
+
+<img src="public/assets/webp/Explore.webp" alt="Interactive cultural exploration map of Campeche" width="100%" />
+
+The map creates a connection between the region's geography and its cultural narratives.
 
 ### 04 — Create a Memory
 
-RAÍCES transforms cultural exploration into a personal experience through digital postcard creation.
+RAÍCES transforms cultural exploration into a personal and creative experience through an interactive digital postcard editor.
 
-Visitors can select a destination and create a visual memory inspired by the landscapes and identity of Campeche.
+Inspired by traditional travel correspondence, the postcard experience allows visitors to create visual memories connected to the landscapes, architecture, and cultural identity of Campeche.
 
-This feature connects the exploration experience with Cloudinary-powered image processing.
+The experience combines:
 
-<img src="public/assets/memory.png" alt="RAÍCES digital postcard creation experience" width="100%" />
+- Destination photography.
+- Reactive application state.
+- Editorial compositions.
+- Interactive postcard faces.
+- Cloudinary-powered image processing.
+- Responsive visual templates.
+
+#### Interactive Postcard Editor
+
+<img src="public/assets/webp/memory.webp" alt="RAÍCES interactive digital postcard editor" width="100%" />
+
+The postcard editor introduces a creative layer to the cultural exploration experience.
+
+Visitors can interact with destination-based postcard compositions and personalize their digital memories.
+
+The experience includes:
+
+- Personalized destination-based postcards.
+- Interactive front and back postcard faces.
+- Three-dimensional postcard transitions.
+- Editorial typography.
+- Destination photography.
+- A decorative Campeche-inspired wax seal.
+- Persistent postcard drafts.
+- Responsive postcard layouts.
+
+#### Double-Sided Postcard Experience
+
+Traditional postcards communicate through both imagery and written memories.
+
+RAÍCES brings this concept into a digital environment through an interactive double-sided postcard experience.
+
+<img src="public/assets/webp/memory2.webp" alt="RAÍCES double-sided digital postcard experience" width="100%" />
+
+The front and back compositions create a more expressive experience inspired by physical travel postcards.
+
+The three-dimensional transitions reinforce the feeling of interacting with a tangible cultural object.
+
+#### Monochrome Editorial Style
+
+The monochrome presentation introduces an alternative visual interpretation of Campeche.
+
+By reducing the emphasis on color, the composition highlights photography, typography, contrast, architectural details, and visual storytelling.
+
+<img src="public/assets/webp/memorymonochrome.webp" alt="RAÍCES monochrome editorial postcard composition" width="100%" />
+
+This visual approach complements the original editorial identity while providing an alternative creative experience.
+
+#### Expanded Editorial Gallery
+
+The editorial gallery has been expanded to represent seven cultural and natural destinations across Campeche.
+
+The gallery uses dynamic Angular templates and responsive compositions to present a broader collection of regional stories.
+
+| Destination | Cultural Identity |
+| --- | --- |
+| San Francisco de Campeche | Colonial architecture and fortified heritage |
+| Edzná | Ancient Maya civilization |
+| Calakmul | Archaeological heritage and tropical forests |
+| Isla Aguada | Coastal landscapes and maritime traditions |
+| Bécal | Traditional craftsmanship and cultural identity |
+| Hecelchakán | Regional history and local traditions |
+| Palizada | Riverside architecture and cultural heritage |
+
+Each destination contributes a different perspective on the cultural diversity of Campeche.
+
+The expanded gallery connects geographic discovery with editorial design and creative expression.
 
 ### 05 — A Cultural Farewell
 
 The final section continues the editorial visual identity of the application through immersive photography, cultural messaging, navigation, and project information.
 
-<img src="public/assets/footer1.png" alt="RAÍCES editorial closing section" width="100%" />
+<img src="public/assets/webp/footer1.webp" alt="RAÍCES editorial closing section" width="100%" />
 
-<img src="public/assets/footer2.png" alt="RAÍCES footer and project credits" width="100%" />
+Rather than ending with a conventional footer, RAÍCES concludes the experience with a reflection on cultural identity and the importance of remembering where we come from.
+
+<img src="public/assets/webp/footer2.webp" alt="RAÍCES footer and project credits" width="100%" />
 
 ---
 
@@ -120,15 +235,22 @@ The final section continues the editorial visual identity of the application thr
 | Feature | Description |
 | --- | --- |
 | Cinematic Hero | Immersive video-based introduction |
-| Destination Carousel | Interactive navigation between cultural destinations |
+| Destination Carousel | Interactive navigation between featured destinations |
 | Geographic Exploration | Interactive map with destination selection |
 | Cultural Storytelling | Bilingual descriptions of regional heritage |
 | Digital Postcards | Personalized visual memories inspired by Campeche |
+| Double-Sided Postcards | Interactive front and back postcard compositions |
+| 3D Postcard Transitions | Motion-driven postcard interactions |
+| Editorial Gallery | Seven cultural and natural destinations |
+| Monochrome Style | Alternative editorial postcard presentation |
+| Persistent Drafts | Preservation of postcard creation state |
+| Dynamic Templates | Reusable Angular postcard compositions |
 | Cloudinary Integration | Remote image fetching, transformations, and optimized delivery |
 | Responsive Design | Adaptable desktop, tablet, and mobile layouts |
 | Internationalization | Spanish and English language support |
 | Motion Design | Smooth transitions and subtle microinteractions |
 | Photography Attribution | Original photography sources and licensing information |
+| Optimized Documentation | WebP screenshots for project documentation |
 
 ---
 
@@ -138,11 +260,15 @@ Cloudinary is a central part of the RAÍCES media experience.
 
 The application uses Cloudinary to transform and deliver destination photography dynamically, reducing the need to maintain multiple manually processed versions of the same image.
 
+Media delivery is particularly important in an experience where photography plays a fundamental role in cultural storytelling.
+
 ### Remote Image Fetching
 
 Destination photographs originate from external photography sources, including Wikimedia Commons.
 
 Cloudinary Remote Fetch enables the application to request transformed versions of these images through a centralized media delivery service.
+
+This approach separates the original photography sources from the media transformation and delivery process.
 
 ### Dynamic Image Transformations
 
@@ -159,9 +285,10 @@ Images are processed using transformation parameters that control dimensions, cr
 Example transformation URL:
 
 ```text
-https://res.cloudinary.com/<cloud-name>/image/fetch/
-c_fill,w_1200,h_744,q_auto,f_auto/<remote-image-url>
+https://res.cloudinary.com/<cloud-name>/image/fetch/c_fill,w_1200,h_744,q_auto,f_auto/<remote-image-url>
 ```
+
+The remote image URL should be appropriately encoded when constructing the delivery URL.
 
 ### Image Delivery Flow
 
@@ -169,10 +296,27 @@ c_fill,w_1200,h_744,q_auto,f_auto/<remote-image-url>
 flowchart LR
     A[Original Photography] --> B[Cloudinary Remote Fetch]
     B --> C[Image Transformations]
-    C --> D[Optimized Delivery]
+    C --> D[Optimized Media Delivery]
     D --> E[Angular Application]
-    E --> F[Destination Exploration]
-    E --> G[Postcard Experience]
+    E --> F[Destination Carousel]
+    E --> G[Interactive Map]
+    E --> H[Postcard Experience]
+    H --> I[Editorial Gallery]
+```
+
+### Media Transformation Pipeline
+
+```mermaid
+flowchart TD
+    A[Destination Photography] --> B[Cloudinary Service]
+    B --> C[Remote Fetch URL]
+    C --> D[Resize and Crop]
+    D --> E[Automatic Quality]
+    E --> F[Automatic Format]
+    F --> G[Browser Rendering]
+    G --> H{Image loaded?}
+    H -->|Yes| I[Display Photography]
+    H -->|No| J[Fallback Handling]
 ```
 
 ### Why Cloudinary?
@@ -185,16 +329,78 @@ Cloudinary supports the project's visual experience by providing:
 - Automatic image format selection.
 - Remote media delivery.
 - Image processing for creative experiences.
+- Reusable media transformation URLs.
 
 The application also includes fallback handling for destination photography when remote image delivery encounters an error.
+
+By combining Cloudinary with Angular, RAÍCES can focus on cultural storytelling and creative interaction while using a dedicated media delivery infrastructure.
+
+### Cloudinary Resources
+
+- [Cloudinary Documentation](https://cloudinary.com/documentation)
+- [Image Transformations](https://cloudinary.com/documentation/image_transformations)
+- [Fetch Remote Images](https://cloudinary.com/documentation/fetch_remote_images)
+- [Image Optimization](https://cloudinary.com/documentation/image_optimization)
+
+---
+
+## Documentation Asset Optimization
+
+The visual documentation of RAÍCES includes original PNG screenshots and optimized WebP versions.
+
+WebP assets are used throughout this README to reduce documentation image weight while preserving the original image dimensions and visual detail.
+
+### Asset Organization
+
+| Format | Purpose |
+| --- | --- |
+| PNG | Original project screenshots |
+| WebP | Optimized documentation and technical articles |
+
+The optimized screenshots are stored in:
+
+```text
+public/assets/webp/
+```
+
+### Documentation Image Inventory
+
+| Asset | Description |
+| --- | --- |
+| `hero.webp` | Cinematic homepage |
+| `wherehistory.webp` | Cultural introduction |
+| `fourview.webp` | Interactive destination carousel |
+| `Explore.webp` | Interactive exploration map |
+| `memory.webp` | Digital postcard editor |
+| `memory2.webp` | Double-sided postcard experience |
+| `memorymonochrome.webp` | Monochrome editorial presentation |
+| `footer1.webp` | Cultural closing section |
+| `footer2.webp` | Footer and project credits |
+
+### Documentation Optimization Workflow
+
+```mermaid
+flowchart LR
+    A[Application Screenshots] --> B[Original PNG Assets]
+    B --> C[WebP Conversion]
+    C --> D[Optimized Documentation Assets]
+    D --> E[GitHub README]
+    D --> F[Technical Articles]
+```
+
+The documentation screenshots are optimized separately from the application's Cloudinary-powered media delivery pipeline.
+
+This distinction allows the project to maintain original documentation assets while providing lighter versions for public technical content.
 
 ---
 
 ## Design Philosophy
 
-RAÍCES follows a contemporary editorial design inspired by cultural magazines, photography exhibitions, and immersive travel experiences.
+RAÍCES follows a contemporary editorial design inspired by cultural magazines, photography exhibitions, traditional travel postcards, and immersive travel experiences.
 
-The interface prioritizes photography, typography, whitespace, and storytelling rather than excessive decorative elements.
+The interface prioritizes photography, typography, whitespace, composition, and storytelling rather than excessive decorative elements.
+
+The design aims to establish an emotional connection between the visitor and the cultural identity of Campeche.
 
 ### Color Palette
 
@@ -212,6 +418,8 @@ The interface prioritizes photography, typography, whitespace, and storytelling 
 - **Cormorant Garamond** — Editorial headings and cultural storytelling.
 - **Manrope** — Navigation, descriptions, and interface elements.
 
+The combination establishes a visual hierarchy that balances expressive cultural narratives with functional interface design.
+
 ### Motion Design
 
 Animations are designed to complement the experience without distracting from its cultural content.
@@ -223,7 +431,25 @@ The visual language includes:
 - Interactive navigation.
 - Subtle hover effects.
 - Responsive microinteractions.
+- Three-dimensional postcard transitions.
+- Editorial gallery interactions.
 - Reduced-motion considerations.
+
+### Editorial Postcard Design
+
+The postcard experience draws inspiration from traditional printed correspondence and contemporary editorial compositions.
+
+Its visual identity combines:
+
+- Destination photography.
+- Expressive typography.
+- Traditional postcard layouts.
+- Decorative cultural details.
+- A Campeche-inspired wax seal.
+- Front and back compositions.
+- Monochrome visual interpretations.
+
+These elements reinforce the connection between digital interaction and physical cultural memories.
 
 ---
 
@@ -236,6 +462,7 @@ The visual language includes:
 | Angular 22 | Application framework |
 | TypeScript | Type-safe application development |
 | Angular Signals | Reactive application state |
+| Angular Templates | Dynamic editorial compositions |
 | Tailwind CSS | Utility-based styling |
 | CSS | Custom editorial layouts and animations |
 | GSAP | Motion design |
@@ -249,6 +476,7 @@ The visual language includes:
 | Cloudinary | Media transformations and delivery |
 | Wikimedia Commons | Source photography |
 | GeoJSON | Geographic data |
+| WebP | Optimized documentation screenshots |
 
 ### Development and Deployment
 
@@ -263,7 +491,39 @@ The visual language includes:
 
 ## Application Architecture
 
-RAÍCES follows a modular Angular architecture with reusable components, centralized services, and separated application data.
+RAÍCES follows a modular Angular architecture with reusable components, centralized services, reactive application state, and separated application data.
+
+### High-Level Architecture
+
+```mermaid
+flowchart TD
+    U[Visitor] --> A[Angular Application]
+
+    A --> UI[Shared UI Components]
+    A --> S[Core Services]
+    A --> D[Application Data]
+
+    UI --> H[Cinematic Hero]
+    UI --> C[Destination Carousel]
+    UI --> M[Interactive Map]
+    UI --> P[Postcard Editor]
+    UI --> G[Editorial Gallery]
+
+    S --> CS[Cloudinary Service]
+    S --> DS[Destination Selection Service]
+    S --> IS[Internationalization Service]
+    S --> PS[Postcard Service]
+
+    CS --> CL[Cloudinary Media Delivery]
+    CL --> W[Remote Photography Sources]
+
+    D --> DD[Destination Data]
+    D --> GD[Geographic Data]
+
+    PS --> PD[Persistent Postcard Drafts]
+```
+
+### Project Structure
 
 ```text
 frontend/
@@ -275,7 +535,19 @@ frontend/
 │   │   ├── fourview.png
 │   │   ├── hero.png
 │   │   ├── memory.png
-│   │   └── wherehistory.png
+│   │   ├── memory2.png
+│   │   ├── memorymonochrome.png
+│   │   ├── wherehistory.png
+│   │   └── webp/
+│   │       ├── Explore.webp
+│   │       ├── footer1.webp
+│   │       ├── footer2.webp
+│   │       ├── fourview.webp
+│   │       ├── hero.webp
+│   │       ├── memory.webp
+│   │       ├── memory2.webp
+│   │       ├── memorymonochrome.webp
+│   │       └── wherehistory.webp
 │   ├── maps/
 │   │   └── campeche.geojson
 │   └── hero.mp4
@@ -313,6 +585,22 @@ frontend/
 | `I18nService` | Spanish and English language management |
 | `PostcardService` | Postcard creation state and interactions |
 
+### Postcard Experience Flow
+
+```mermaid
+flowchart TD
+    A[Explore Campeche] --> B[Select Destination]
+    B --> C[Load Destination Photography]
+    C --> D[Cloudinary Media Delivery]
+    D --> E[Postcard Editor]
+    E --> F[Personalize Composition]
+    F --> G[Front and Back Preview]
+    G --> H[Visual Presentation]
+    H --> I[Editorial Gallery]
+```
+
+The architecture separates destination data, media delivery, application state, and presentation logic to support reusable components and future improvements.
+
 ---
 
 ## Getting Started
@@ -331,13 +619,13 @@ Before running the project locally, make sure you have:
 Clone the repository:
 
 ```bash
-git clone https://github.com/Ezequie1Sc/raices-discover-campeche.git
+git clone https://github.com/Ezequie1Sc/frontend.git
 ```
 
-Navigate to the frontend directory:
+Navigate to the project directory:
 
 ```bash
-cd raices-discover-campeche/frontend
+cd frontend
 ```
 
 Install the dependencies:
@@ -380,6 +668,14 @@ Remote Fetch must be permitted by the corresponding Cloudinary product environme
 
 Private API secrets must never be exposed in frontend source code or committed to the repository.
 
+### Live Deployment
+
+The application is deployed using Vercel.
+
+- **Live application:** [Explore RAÍCES](https://frontend-iche.vercel.app/)
+- **Source code:** [GitHub Repository](https://github.com/Ezequie1Sc/frontend)
+- **Video demonstration:** [Watch on YouTube](https://www.youtube.com/watch?v=XDvKn_bbwCA)
+
 ---
 
 ## Internationalization
@@ -395,6 +691,8 @@ Visitors can switch languages directly from the navigation interface.
 
 Cultural descriptions, navigation labels, interface actions, and editorial content adapt to the selected language.
 
+Internationalization helps make the cultural heritage of Campeche available to a broader audience while preserving its regional identity.
+
 ---
 
 ## Responsive Experience
@@ -407,6 +705,18 @@ The application is designed for multiple screen sizes, including:
 - Mobile devices.
 
 Layouts adapt to the available screen space while preserving the editorial identity and core exploration experience.
+
+Responsive considerations include:
+
+- Adaptive typography.
+- Flexible destination layouts.
+- Responsive media compositions.
+- Mobile-friendly navigation.
+- Interactive geographic visualization.
+- Adaptive postcard compositions.
+- Responsive editorial galleries.
+
+The objective is to maintain a consistent cultural experience across different devices.
 
 ---
 
@@ -425,11 +735,21 @@ Original photography remains the property of its respective authors and is subje
 
 Additional attribution information is available within the application and its destination data.
 
-Photographic transformations do not transfer ownership of the original media. Adapted postcards must comply with the applicable source image licenses.
+Photographic transformations do not transfer ownership of the original media.
+
+Adapted postcards, transformed photographs, and documentation screenshots containing third-party media must comply with the applicable source image licenses.
 
 ---
 
 ## Hackathon Submission
+
+<div align="center">
+
+  <h3>Cloudinary November Mini-Hack 2026</h3>
+
+  <p>Celebrate Where You're From!</p>
+
+</div>
 
 | Information | Details |
 | --- | --- |
@@ -437,9 +757,12 @@ Photographic transformations do not transfer ownership of the original media. Ad
 | Event | Cloudinary November Mini-Hack 2026 |
 | Theme | Celebrate Where You're From! |
 | Region | Campeche, Mexico |
+| Country | Mexico |
 | Category | Cultural exploration and creative media |
 | Media Platform | Cloudinary |
 | Developer | Orlando Ezequiel Salazar Cruz |
+| Frontend Framework | Angular 22 |
+| Deployment | Vercel |
 
 ### The Challenge
 
@@ -448,6 +771,73 @@ The challenge encourages developers to celebrate the places they come from throu
 RAÍCES responds to this theme by transforming the cultural identity of Campeche into an interactive digital journey.
 
 By combining authentic photography, geographic exploration, cinematic storytelling, and personalized postcards, the project creates a connection between technology, cultural heritage, and personal identity.
+
+### Project Objectives
+
+| Objective | Implementation |
+| --- | --- |
+| Celebrate local culture | Interactive exploration of Campeche |
+| Encourage discovery | Destination carousel and geographic visualization |
+| Integrate creative media | Cloudinary-powered photography |
+| Promote personal expression | Interactive digital postcards |
+| Deliver visual storytelling | Editorial design and cinematic presentation |
+| Reach international audiences | Spanish and English support |
+
+### Submission Resources
+
+| Resource | Link |
+| --- | --- |
+| Live Application | [Explore RAÍCES](https://frontend-iche.vercel.app/) |
+| Source Code | [GitHub Repository](https://github.com/Ezequie1Sc/frontend) |
+| Video Demonstration | [YouTube](https://www.youtube.com/watch?v=XDvKn_bbwCA) |
+| Media Infrastructure | [Cloudinary](https://cloudinary.com/) |
+
+---
+
+## Development Evolution
+
+RAÍCES has evolved through multiple development iterations, expanding its original cultural exploration experience with new creative and editorial features.
+
+### Initial Experience
+
+- Cinematic introduction.
+- Cultural storytelling.
+- Featured destination carousel.
+- Interactive geographic exploration.
+- Initial postcard creation experience.
+- Cloudinary media integration.
+
+### Premium Experience
+
+- Refined editorial visual identity.
+- Improved interactive layouts.
+- Enhanced motion design.
+- Responsive visual compositions.
+
+### Premium Postcard Experience
+
+- Double-sided postcard compositions.
+- Three-dimensional postcard interactions.
+- Campeche-inspired wax seal.
+- Reactive postcard editor state.
+- Persistent postcard drafts.
+- Additional cultural destinations.
+
+### Expanded Editorial Gallery
+
+- Seven cultural and natural destinations.
+- Dynamic Angular postcard templates.
+- Expanded editorial compositions.
+- Improved responsive gallery layouts.
+- Monochrome visual presentation.
+
+### Documentation Refresh
+
+- Updated project screenshots.
+- Nine optimized WebP documentation assets.
+- Expanded technical documentation.
+- Updated architecture diagrams.
+- Improved project presentation.
 
 ---
 
@@ -462,6 +852,11 @@ Potential future developments include:
 - Interactive cultural timelines.
 - Digital travel collections.
 - Expanded accessibility features.
+- Additional internationalization options.
+- Further media delivery optimization.
+- Expanded cultural storytelling experiences.
+
+These improvements would continue the project's objective of connecting cultural heritage with creative technology.
 
 ---
 
@@ -469,7 +864,7 @@ Potential future developments include:
 
 <div align="center">
 
-  <img src="https://github.com/Ezequie1Sc.png" width="100" alt="Developer GitHub profile" />
+  <img src="https://github.com/Ezequie1Sc.png" width="100" alt="Orlando Ezequiel Salazar Cruz GitHub profile" />
 
   <h3>Orlando Ezequiel Salazar Cruz</h3>
 
@@ -479,8 +874,17 @@ Potential future developments include:
     Campeche, Mexico
   </p>
 
+  <p>
+    Interested in software engineering, creative development,
+    open-source technologies, and meaningful digital experiences.
+  </p>
+
   <a href="https://github.com/Ezequie1Sc">
     <img src="https://img.shields.io/badge/GitHub-Ezequie1Sc-181717?style=for-the-badge&logo=github" alt="GitHub profile" />
+  </a>
+
+  <a href="https://dev.to/ezequie1sc">
+    <img src="https://img.shields.io/badge/DEV-Technical_Articles-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white" alt="DEV Community profile" />
   </a>
 
   <a href="https://ezequiel-dev-ia.vercel.app/">
@@ -496,9 +900,12 @@ Potential future developments include:
 Special thanks to:
 
 - Cloudinary for providing the media infrastructure and creative challenge.
+- The Cloudinary developer community for encouraging creative technology.
 - Wikimedia Commons contributors for sharing cultural photography.
 - The communities that preserve the history and traditions of Campeche.
 - Everyone working to protect and celebrate Mexico's cultural heritage.
+
+RAÍCES is a celebration of the places, people, landscapes, and stories that shape our identity.
 
 ---
 
@@ -506,7 +913,13 @@ Special thanks to:
 
   <h1>RAÍCES</h1>
 
-  <p>Discover the land. Remember the stories. Celebrate your roots.</p>
+  <h3>Discover the land. Remember the stories. Celebrate your roots.</h3>
+
+  <p>
+    Technology can do more than solve problems.<br />
+    It can preserve memories, connect communities,<br />
+    and bring our stories to the world.
+  </p>
 
   <p><strong>Designed and developed in Campeche, Mexico.</strong></p>
 
