@@ -21,6 +21,7 @@
   ![GSAP](https://img.shields.io/badge/GSAP-0AE448?style=flat-square&logo=gsap&logoColor=black)
   ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
   ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel)
+  ![Contributions](https://img.shields.io/badge/Contributions-Welcome-284B40?style=flat-square)
 
   **Cloudinary November Mini-Hack 2026**
 
@@ -45,6 +46,8 @@
 - [The Experience](#the-experience)
 - [Key Features](#key-features)
 - [Cloudinary Integration](#cloudinary-integration)
+- [Creative Image Transformations](#creative-image-transformations)
+- [Postcard Engineering](#postcard-engineering)
 - [Documentation Asset Optimization](#documentation-asset-optimization)
 - [Design Philosophy](#design-philosophy)
 - [Technology Stack](#technology-stack)
@@ -54,7 +57,9 @@
 - [Responsive Experience](#responsive-experience)
 - [Photography and Attribution](#photography-and-attribution)
 - [Hackathon Submission](#hackathon-submission)
+- [Development Evolution](#development-evolution)
 - [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -64,11 +69,13 @@
 
 **RAÍCES — Discover Campeche** is an interactive digital experience designed to celebrate the cultural heritage, natural beauty, and historical identity of Campeche, Mexico.
 
-Rather than creating a conventional tourism website, RAÍCES presents the region through an immersive editorial experience where photography, storytelling, interactive exploration, and personalized digital postcards come together.
+Rather than creating a conventional tourism website, RAÍCES presents the region through an immersive editorial experience where photography, storytelling, geographic exploration, and personalized digital postcards come together.
 
 The project invites visitors to discover a territory shaped by ancient Maya civilizations, colonial architecture, tropical landscapes, traditional craftsmanship, riverside communities, and coastal traditions.
 
-Through modern web technologies and Cloudinary-powered media delivery, RAÍCES explores how digital experiences can help share cultural identity with a global audience.
+Built with Angular 22 and Cloudinary, RAÍCES explores how modern software engineering and creative media technologies can make cultural heritage more accessible, interactive, and meaningful.
+
+The application combines reactive frontend architecture, dynamic image transformations, interactive visual compositions, and browser-based postcard generation.
 
 > Every place has a story. Every story has roots.
 
@@ -80,7 +87,7 @@ Campeche is more than a destination.
 
 It is a territory where centuries of history coexist with everyday traditions, colorful architecture, ancient archaeological sites, and the waters of the Gulf of Mexico.
 
-As a developer from Campeche, I wanted to create an experience that celebrates the place I come from while combining technology, visual storytelling, and cultural identity.
+As a developer from Hecelchakán, Campeche, I wanted to create an experience that celebrates the place I come from while combining technology, visual storytelling, and cultural identity.
 
 RAÍCES is my way of sharing a part of Mexico that deserves to be discovered, remembered, and celebrated.
 
@@ -110,8 +117,6 @@ The interface combines:
 - Bilingual storytelling.
 
 The objective is to establish an emotional connection with the region before visitors begin exploring individual destinations.
-
-<img src="public/assets/webp/hero.webp" alt="Cinematic introduction to Campeche" width="100%" />
 
 ### 02 — Four Views of Campeche
 
@@ -148,33 +153,26 @@ RAÍCES transforms cultural exploration into a personal and creative experience 
 
 Inspired by traditional travel correspondence, the postcard experience allows visitors to create visual memories connected to the landscapes, architecture, and cultural identity of Campeche.
 
-The experience combines:
-
-- Destination photography.
-- Reactive application state.
-- Editorial compositions.
-- Interactive postcard faces.
-- Cloudinary-powered image processing.
-- Responsive visual templates.
-
 #### Interactive Postcard Editor
 
-<img src="public/assets/webp/memory.webp" alt="RAÍCES interactive digital postcard editor" width="100%" />
+<img src="public/assets/webp/memory.webp" alt="RAÍCES interactive digital postcard editor featuring Calakmul" width="100%" />
 
-The postcard editor introduces a creative layer to the cultural exploration experience.
+Visitors can select a destination, apply photographic transformations, personalize their messages, preview both postcard faces, and export their creations.
 
-Visitors can interact with destination-based postcard compositions and personalize their digital memories.
+The editor combines:
 
-The experience includes:
-
-- Personalized destination-based postcards.
+- Destination-based postcard compositions.
+- Reactive application state.
+- Cloudinary-powered photographic filters.
 - Interactive front and back postcard faces.
 - Three-dimensional postcard transitions.
 - Editorial typography.
-- Destination photography.
 - A decorative Campeche-inspired wax seal.
+- Personalized messages.
 - Persistent postcard drafts.
-- Responsive postcard layouts.
+- Responsive visual layouts.
+- Individual PNG downloads.
+- Combined ZIP downloads.
 
 #### Double-Sided Postcard Experience
 
@@ -182,25 +180,37 @@ Traditional postcards communicate through both imagery and written memories.
 
 RAÍCES brings this concept into a digital environment through an interactive double-sided postcard experience.
 
-<img src="public/assets/webp/memory2.webp" alt="RAÍCES double-sided digital postcard experience" width="100%" />
+<img src="public/assets/webp/memory2.webp" alt="RAÍCES reverse postcard composition with personalized correspondence" width="100%" />
 
-The front and back compositions create a more expressive experience inspired by physical travel postcards.
+The front face focuses on destination photography, editorial typography, photographic attribution, and visual identity.
 
-The three-dimensional transitions reinforce the feeling of interacting with a tangible cultural object.
+The reverse face introduces traditional correspondence elements, including:
 
-#### Monochrome Editorial Style
+- Personalized messages.
+- Sender information.
+- Recipient information.
+- Destination details.
+- Date information.
+- Decorative postal elements.
 
-The monochrome presentation introduces an alternative visual interpretation of Campeche.
+Three-dimensional transitions reinforce the feeling of interacting with a tangible cultural object.
 
-By reducing the emphasis on color, the composition highlights photography, typography, contrast, architectural details, and visual storytelling.
+#### Creative Photography
 
-<img src="public/assets/webp/memorymonochrome.webp" alt="RAÍCES monochrome editorial postcard composition" width="100%" />
+The postcard editor offers four photographic styles powered by Cloudinary:
 
-This visual approach complements the original editorial identity while providing an alternative creative experience.
+- Original.
+- Monochrome.
+- Sepia.
+- Vivid.
+
+These transformations allow visitors to reinterpret the same destination through different visual perspectives without maintaining separate manually edited photographs.
+
+The technical implementation and visual comparisons are documented in the [Creative Image Transformations](#creative-image-transformations) section.
 
 #### Expanded Editorial Gallery
 
-The editorial gallery has been expanded to represent seven cultural and natural destinations across Campeche.
+The editorial gallery represents seven cultural and natural destinations across Campeche.
 
 The gallery uses dynamic Angular templates and responsive compositions to present a broader collection of regional stories.
 
@@ -215,8 +225,6 @@ The gallery uses dynamic Angular templates and responsive compositions to presen
 | Palizada | Riverside architecture and cultural heritage |
 
 Each destination contributes a different perspective on the cultural diversity of Campeche.
-
-The expanded gallery connects geographic discovery with editorial design and creative expression.
 
 ### 05 — A Cultural Farewell
 
@@ -242,10 +250,15 @@ Rather than ending with a conventional footer, RAÍCES concludes the experience 
 | Double-Sided Postcards | Interactive front and back postcard compositions |
 | 3D Postcard Transitions | Motion-driven postcard interactions |
 | Editorial Gallery | Seven cultural and natural destinations |
-| Monochrome Style | Alternative editorial postcard presentation |
-| Persistent Drafts | Preservation of postcard creation state |
+| Creative Image Filters | Original, Monochrome, Sepia, and Vivid styles |
+| Cloudinary Remote Fetch | Dynamic delivery of externally sourced photography |
+| Image Transformations | Declarative resizing, cropping, quality, format, and effects |
+| Reactive State | Application state managed through Angular Signals |
+| Persistent Drafts | Browser-based preservation of postcard draft fields |
+| Canvas Rendering | Programmatic generation of postcard images |
+| PNG Export | Individual postcard face downloads |
+| ZIP Export | Combined postcard face downloads using JSZip |
 | Dynamic Templates | Reusable Angular postcard compositions |
-| Cloudinary Integration | Remote image fetching, transformations, and optimized delivery |
 | Responsive Design | Adaptable desktop, tablet, and mobile layouts |
 | Internationalization | Spanish and English language support |
 | Motion Design | Smooth transitions and subtle microinteractions |
@@ -256,11 +269,16 @@ Rather than ending with a conventional footer, RAÍCES concludes the experience 
 
 ## Cloudinary Integration
 
-Cloudinary is a central part of the RAÍCES media experience.
+Cloudinary is a central component of the RAÍCES media architecture.
 
 The application uses Cloudinary to transform and deliver destination photography dynamically, reducing the need to maintain multiple manually processed versions of the same image.
 
 Media delivery is particularly important in an experience where photography plays a fundamental role in cultural storytelling.
+
+Cloudinary contributes to two major aspects of the application:
+
+1. **Media delivery:** Dynamic resizing, cropping, quality optimization, and format selection.
+2. **Creative interaction:** Photographic transformations that allow visitors to personalize their postcards.
 
 ### Remote Image Fetching
 
@@ -268,56 +286,130 @@ Destination photographs originate from external photography sources, including W
 
 Cloudinary Remote Fetch enables the application to request transformed versions of these images through a centralized media delivery service.
 
-This approach separates the original photography sources from the media transformation and delivery process.
+This approach separates the original photography sources from the transformation and delivery process.
+
+```mermaid
+flowchart LR
+    A["Remote Photography"] --> B["Cloudinary Remote Fetch"]
+    B --> C["Image Transformations"]
+    C --> D["Optimized Media Delivery"]
+    D --> E["Angular Application"]
+    E --> F["Destination Carousel"]
+    E --> G["Interactive Map"]
+    E --> H["Postcard Editor"]
+
+    classDef primary fill:#284B40,color:#FFFFFF,stroke:#284B40
+    classDef secondary fill:#F6F3EB,color:#262B28,stroke:#284B40
+
+    class B,C,D primary
+    class A,E,F,G,H secondary
+```
 
 ### Dynamic Image Transformations
 
-Images are processed using transformation parameters that control dimensions, cropping, quality, and delivery format.
+The application constructs Cloudinary delivery URLs using transformation parameters that control dimensions, cropping, quality, delivery format, and optional photographic effects.
 
 | Transformation | Purpose |
 | --- | --- |
 | `c_fill` | Fill the requested image dimensions |
-| `w_1200` | Set the requested image width |
-| `h_744` | Set the requested image height |
+| `w_1200` | Example requested image width |
+| `h_744` | Corresponding image height |
 | `q_auto` | Automatically select image quality |
 | `f_auto` | Automatically select a supported image format |
+| `e_grayscale` | Apply a monochrome effect |
+| `e_sepia:70` | Apply a sepia effect |
+| `e_saturation:35` | Increase color saturation |
 
-Example transformation URL:
+The width is configurable, while the height is calculated using a consistent proportional relationship.
+
+### Cloudinary URL Generation
+
+The following implementation illustrates the URL generation logic used by the application's `CloudinaryService`.
+
+```typescript
+cloudUrl(
+  destination: Destination,
+  width = 1200,
+  effect = ''
+): string {
+  const height = Math.round(width * 0.62);
+
+  const transformations = [
+    'c_fill',
+    `w_${width}`,
+    `h_${height}`,
+    'q_auto',
+    'f_auto'
+  ];
+
+  if (effect) {
+    transformations.push(effect);
+  }
+
+  return (
+    `https://res.cloudinary.com/${this.cloud}/image/fetch/` +
+    `${transformations.join(',')}/` +
+    encodeURIComponent(destination.url)
+  );
+}
+```
+
+This approach allows the application to generate different media representations from the same source photograph.
+
+For example, a standard delivery URL follows this structure:
 
 ```text
-https://res.cloudinary.com/<cloud-name>/image/fetch/c_fill,w_1200,h_744,q_auto,f_auto/<remote-image-url>
+https://res.cloudinary.com/<cloud-name>/image/fetch/c_fill,w_1200,h_744,q_auto,f_auto/<encoded-remote-image-url>
 ```
 
-The remote image URL should be appropriately encoded when constructing the delivery URL.
+A monochrome representation adds the corresponding photographic transformation:
 
-### Image Delivery Flow
-
-```mermaid
-flowchart LR
-    A[Original Photography] --> B[Cloudinary Remote Fetch]
-    B --> C[Image Transformations]
-    C --> D[Optimized Media Delivery]
-    D --> E[Angular Application]
-    E --> F[Destination Carousel]
-    E --> G[Interactive Map]
-    E --> H[Postcard Experience]
-    H --> I[Editorial Gallery]
+```text
+https://res.cloudinary.com/<cloud-name>/image/fetch/c_fill,w_1200,h_744,q_auto,f_auto,e_grayscale/<encoded-remote-image-url>
 ```
+
+The original photograph remains unchanged. Cloudinary delivers the requested transformed representation.
 
 ### Media Transformation Pipeline
 
 ```mermaid
 flowchart TD
-    A[Destination Photography] --> B[Cloudinary Service]
-    B --> C[Remote Fetch URL]
-    C --> D[Resize and Crop]
-    D --> E[Automatic Quality]
-    E --> F[Automatic Format]
-    F --> G[Browser Rendering]
-    G --> H{Image loaded?}
-    H -->|Yes| I[Display Photography]
-    H -->|No| J[Fallback Handling]
+    A["Destination Data"] --> B["CloudinaryService"]
+    B --> C["Calculate Image Dimensions"]
+    C --> D["Build Transformation Parameters"]
+    D --> E{"Creative Effect Selected?"}
+
+    E -->|Yes| F["Append Photographic Effect"]
+    E -->|No| G["Standard Transformations"]
+
+    F --> H["Encode Remote Image URL"]
+    G --> H
+
+    H --> I["Cloudinary Remote Fetch"]
+    I --> J["Browser Image Rendering"]
+
+    J --> K{"Image Loaded?"}
+    K -->|Yes| L["Display Photography"]
+    K -->|No| M["Fallback Handling"]
+
+    classDef primary fill:#284B40,color:#FFFFFF,stroke:#284B40
+    classDef secondary fill:#F6F3EB,color:#262B28,stroke:#284B40
+    classDef accent fill:#E6D6BD,color:#262B28,stroke:#284B40
+
+    class B,D,I primary
+    class E,K accent
+    class A,C,F,G,H,J,L,M secondary
 ```
+
+### Error Handling
+
+The application includes fallback handling for destination photography when remote image delivery encounters an error.
+
+This helps maintain the visual experience when an external photography source or transformed image cannot be loaded.
+
+Browser-based postcard export has additional requirements because Canvas must be permitted to access the image data.
+
+Consequently, successful image rendering in the interface does not necessarily guarantee successful Canvas export.
 
 ### Why Cloudinary?
 
@@ -328,12 +420,103 @@ Cloudinary supports the project's visual experience by providing:
 - Automatic quality optimization.
 - Automatic image format selection.
 - Remote media delivery.
-- Image processing for creative experiences.
+- Declarative photographic effects.
 - Reusable media transformation URLs.
-
-The application also includes fallback handling for destination photography when remote image delivery encounters an error.
+- Creative personalization without manually generating every image variant.
 
 By combining Cloudinary with Angular, RAÍCES can focus on cultural storytelling and creative interaction while using a dedicated media delivery infrastructure.
+
+---
+
+## Creative Image Transformations
+
+One of the central creative features of RAÍCES is its interactive photographic transformation system.
+
+Instead of storing four independently edited versions of each destination photograph, the application constructs Cloudinary URLs according to the selected photographic style.
+
+This allows the same source image to be presented through different visual interpretations.
+
+### Available Photographic Styles
+
+| Style | Cloudinary Effect | Visual Purpose |
+| --- | --- | --- |
+| Original | No additional effect | Preserve the original photographic appearance |
+| Monochrome | `e_grayscale` | Emphasize contrast, structure, and architectural detail |
+| Sepia | `e_sepia:70` | Create a warm, historical photographic interpretation |
+| Vivid | `e_saturation:35` | Enhance the intensity of the original colors |
+
+### Visual Comparison
+
+The following screenshots demonstrate the four photographic styles using the same destination: San Francisco de Campeche.
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="public/assets/webp/memoryOriginal.webp" alt="Original Cloudinary postcard style" width="100%" />
+      <br />
+      <strong>Original</strong>
+      <br />
+      <sub>No additional photographic effect</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="public/assets/webp/memorymonochrome.webp" alt="Monochrome Cloudinary postcard transformation" width="100%" />
+      <br />
+      <strong>Monochrome</strong>
+      <br />
+      <code>e_grayscale</code>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="public/assets/webp/memorysepia.webp" alt="Sepia Cloudinary postcard transformation" width="100%" />
+      <br />
+      <strong>Sepia</strong>
+      <br />
+      <code>e_sepia:70</code>
+    </td>
+    <td width="50%" align="center">
+      <img src="public/assets/webp/memoryvivid.webp" alt="Vivid Cloudinary postcard transformation" width="100%" />
+      <br />
+      <strong>Vivid</strong>
+      <br />
+      <code>e_saturation:35</code>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <sub>
+    Four photographic interpretations of the same destination.
+    Original photography by Adam Jones, Ph.D. — CC BY-SA 3.0.
+  </sub>
+</p>
+
+### Reactive Transformation Selection
+
+The selected photographic style forms part of the postcard's reactive application state.
+
+Angular Signals and computed values allow the application to derive the corresponding image representation when the selected destination or photographic style changes.
+
+The following conceptual diagram describes this interaction:
+
+```mermaid
+flowchart LR
+    A["User Selects Style"] --> B["Postcard Reactive State"]
+    B --> C["Computed Image URL"]
+    C --> D["CloudinaryService"]
+    D --> E["Cloudinary Transformation"]
+    E --> F["Updated Postcard Preview"]
+
+    classDef primary fill:#284B40,color:#FFFFFF,stroke:#284B40
+    classDef secondary fill:#F6F3EB,color:#262B28,stroke:#284B40
+
+    class B,C,D,E primary
+    class A,F secondary
+```
+
+This approach separates user interaction from media transformation logic.
+
+The postcard editor manages the selected creative state, while Cloudinary handles the requested photographic representation.
 
 ### Cloudinary Resources
 
@@ -341,6 +524,132 @@ By combining Cloudinary with Angular, RAÍCES can focus on cultural storytelling
 - [Image Transformations](https://cloudinary.com/documentation/image_transformations)
 - [Fetch Remote Images](https://cloudinary.com/documentation/fetch_remote_images)
 - [Image Optimization](https://cloudinary.com/documentation/image_optimization)
+- [Transformation Reference](https://cloudinary.com/documentation/transformation_reference)
+
+---
+
+## Postcard Engineering
+
+The postcard experience is more than a visual interface.
+
+It combines reactive state management, dynamic media transformations, browser storage, programmatic rendering, and file generation.
+
+### Reactive Postcard State
+
+The postcard service manages the information required to personalize the postcard experience.
+
+This includes:
+
+- Selected destination.
+- Selected photographic style.
+- Personalized message.
+- Sender information.
+- Recipient information.
+- Derived image representations.
+
+Angular Signals provide a reactive mechanism for managing application state and deriving values from user selections.
+
+The destination selection service also provides shared destination state across different parts of the application.
+
+### Persistent Drafts
+
+RAÍCES uses browser `localStorage` to preserve selected postcard draft fields.
+
+The persisted information includes:
+
+- Personalized message.
+- Sender information.
+- Recipient information.
+- Selected photographic filter.
+
+This allows visitors to recover their creative progress after returning to the application in the same browser, subject to browser storage availability.
+
+The persistence mechanism is local to the browser and does not represent cloud synchronization or server-side user accounts.
+
+### Browser-Based Canvas Rendering
+
+The downloadable postcards are generated programmatically using the HTML5 Canvas API.
+
+The export process creates postcard images with a resolution of:
+
+<div align="center">
+
+  <h2>1600 × 1000 pixels</h2>
+
+  <p>Browser-generated digital postcard composition</p>
+
+</div>
+
+Canvas rendering combines visual elements such as:
+
+- Destination photography.
+- Background colors.
+- Editorial typography.
+- Destination information.
+- Personalized correspondence.
+- Decorative elements.
+- Photography attribution.
+
+The exported images are generated from postcard data and rendering logic rather than simply capturing a screenshot of the editor.
+
+### Export Formats
+
+| Format | Description |
+| --- | --- |
+| Front PNG | Download the front postcard composition |
+| Back PNG | Download the reverse postcard composition |
+| ZIP | Download both postcard faces in a single archive |
+
+JSZip is used to package the generated postcard images into a downloadable ZIP archive.
+
+### Postcard Generation Pipeline
+
+```mermaid
+flowchart TD
+    A["Explore Campeche"] --> B["Select Destination"]
+    B --> C["Select Photographic Style"]
+    C --> D["Cloudinary Image Delivery"]
+    D --> E["Postcard Editor"]
+
+    E --> F["Personalized Correspondence"]
+    E --> G["Reactive Preview"]
+    F --> H["Local Draft Persistence"]
+
+    G --> I["Front and Back Composition"]
+    I --> J["Canvas Rendering"]
+    J --> K["1600 x 1000 Image"]
+
+    K --> L["Front PNG"]
+    K --> M["Back PNG"]
+
+    L --> N["JSZip"]
+    M --> N
+    N --> O["Combined ZIP Download"]
+
+    classDef primary fill:#284B40,color:#FFFFFF,stroke:#284B40
+    classDef secondary fill:#F6F3EB,color:#262B28,stroke:#284B40
+    classDef accent fill:#E6D6BD,color:#262B28,stroke:#284B40
+
+    class D,E,J,N primary
+    class H,K,O accent
+    class A,B,C,F,G,I,L,M secondary
+```
+
+### Cross-Origin Image Considerations
+
+Because the application uses remotely sourced photography, Canvas rendering must account for cross-origin restrictions.
+
+A remote image may be displayed successfully in the browser while still being unavailable for pixel extraction or image export.
+
+The postcard generation logic includes error handling for image-loading and export failures.
+
+### Photography Attribution in Exports
+
+Cultural photography is an essential part of RAÍCES.
+
+The postcard rendering process incorporates attribution information associated with the original photography, including the author, applicable license, source information, and adaptation notice.
+
+Photographic transformations do not remove the obligations associated with the original image license.
 
 ---
 
@@ -371,9 +680,12 @@ public/assets/webp/
 | `wherehistory.webp` | Cultural introduction |
 | `fourview.webp` | Interactive destination carousel |
 | `Explore.webp` | Interactive exploration map |
-| `memory.webp` | Digital postcard editor |
+| `memory.webp` | Interactive postcard editor featuring Calakmul |
 | `memory2.webp` | Double-sided postcard experience |
-| `memorymonochrome.webp` | Monochrome editorial presentation |
+| `memoryOriginal.webp` | Original photographic style |
+| `memorymonochrome.webp` | Monochrome photographic transformation |
+| `memorysepia.webp` | Sepia photographic transformation |
+| `memoryvivid.webp` | Vivid photographic transformation |
 | `footer1.webp` | Cultural closing section |
 | `footer2.webp` | Footer and project credits |
 
@@ -381,16 +693,24 @@ public/assets/webp/
 
 ```mermaid
 flowchart LR
-    A[Application Screenshots] --> B[Original PNG Assets]
-    B --> C[WebP Conversion]
-    C --> D[Optimized Documentation Assets]
-    D --> E[GitHub README]
-    D --> F[Technical Articles]
+    A["Application Screenshots"] --> B["Original PNG Assets"]
+    B --> C["WebP Conversion"]
+    C --> D["Optimized Documentation Assets"]
+    D --> E["GitHub README"]
+    D --> F["Technical Articles"]
+
+    classDef primary fill:#284B40,color:#FFFFFF,stroke:#284B40
+    classDef secondary fill:#F6F3EB,color:#262B28,stroke:#284B40
+
+    class C,D primary
+    class A,B,E,F secondary
 ```
 
 The documentation screenshots are optimized separately from the application's Cloudinary-powered media delivery pipeline.
 
-This distinction allows the project to maintain original documentation assets while providing lighter versions for public technical content.
+The WebP documentation assets are pre-generated screenshots, while Cloudinary dynamically transforms the destination photography used within the application.
+
+This distinction separates documentation optimization from runtime media processing.
 
 ---
 
@@ -447,7 +767,8 @@ Its visual identity combines:
 - Decorative cultural details.
 - A Campeche-inspired wax seal.
 - Front and back compositions.
-- Monochrome visual interpretations.
+- Multiple photographic interpretations.
+- Traditional postal elements.
 
 These elements reinforce the connection between digital interaction and physical cultural memories.
 
@@ -469,11 +790,15 @@ These elements reinforce the connection between digital interaction and physical
 | SVG | Interactive geographic visualization |
 | HTML5 Video | Cinematic media experience |
 
-### Media Infrastructure
+### Media and Creative Engineering
 
 | Technology | Purpose |
 | --- | --- |
 | Cloudinary | Media transformations and delivery |
+| Cloudinary Remote Fetch | Delivery of externally sourced photography |
+| HTML5 Canvas API | Programmatic postcard image generation |
+| JSZip | Combined postcard archive generation |
+| Browser localStorage | Local postcard draft persistence |
 | Wikimedia Commons | Source photography |
 | GeoJSON | Geographic data |
 | WebP | Optimized documentation screenshots |
@@ -493,37 +818,84 @@ These elements reinforce the connection between digital interaction and physical
 
 RAÍCES follows a modular Angular architecture with reusable components, centralized services, reactive application state, and separated application data.
 
+The architecture is organized around four major concerns:
+
+- Presentation and user interaction.
+- Reactive application state.
+- Media transformation and delivery.
+- Postcard generation and export.
+
 ### High-Level Architecture
+
+The following conceptual architecture diagram summarizes the responsibilities of the application's main components and services.
 
 ```mermaid
 flowchart TD
-    U[Visitor] --> A[Angular Application]
+    U["Visitor"] --> A["Angular Application"]
 
-    A --> UI[Shared UI Components]
-    A --> S[Core Services]
-    A --> D[Application Data]
+    A --> UI["Presentation Layer"]
+    A --> S["Core Services"]
+    A --> D["Application Data"]
 
-    UI --> H[Cinematic Hero]
-    UI --> C[Destination Carousel]
-    UI --> M[Interactive Map]
-    UI --> P[Postcard Editor]
-    UI --> G[Editorial Gallery]
+    UI --> H["Cinematic Hero"]
+    UI --> C["Destination Carousel"]
+    UI --> M["Interactive Map"]
+    UI --> P["Postcard Editor"]
+    UI --> G["Editorial Gallery"]
 
-    S --> CS[Cloudinary Service]
-    S --> DS[Destination Selection Service]
-    S --> IS[Internationalization Service]
-    S --> PS[Postcard Service]
+    S --> CS["CloudinaryService"]
+    S --> DS["DestinationSelectionService"]
+    S --> IS["I18nService"]
+    S --> PS["PostcardService"]
 
-    CS --> CL[Cloudinary Media Delivery]
-    CL --> W[Remote Photography Sources]
+    CS --> CL["Cloudinary Remote Fetch"]
+    CL --> W["Remote Photography Sources"]
 
-    D --> DD[Destination Data]
-    D --> GD[Geographic Data]
+    D --> DD["Destination Data"]
+    D --> GD["Geographic Data"]
 
-    PS --> PD[Persistent Postcard Drafts]
+    PS --> ST["Reactive Postcard State"]
+    PS --> LS["Local Storage"]
+    PS --> CV["Canvas Rendering"]
+
+    CV --> PNG["PNG Images"]
+    PNG --> ZIP["JSZip Archive"]
+
+    classDef primary fill:#284B40,color:#FFFFFF,stroke:#284B40
+    classDef secondary fill:#F6F3EB,color:#262B28,stroke:#284B40
+    classDef accent fill:#E6D6BD,color:#262B28,stroke:#284B40
+
+    class A,S,CS,PS,CL primary
+    class UI,D,ST,LS,CV,PNG,ZIP accent
+    class U,H,C,M,P,G,DS,IS,W,DD,GD secondary
 ```
 
+### Core Services
+
+| Service | Responsibility |
+| --- | --- |
+| `CloudinaryService` | Dynamic image URL generation, transformations, and fallback handling |
+| `DestinationSelectionService` | Shared reactive destination selection |
+| `I18nService` | Spanish and English language management |
+| `PostcardService` | Postcard state, photographic styles, draft persistence, rendering, and export |
+
+### Separation of Responsibilities
+
+The application separates cultural content from presentation logic and media processing.
+
+Destination data provides the information required to represent cultural locations.
+
+The destination selection service coordinates shared destination state.
+
+CloudinaryService encapsulates media transformation URL generation.
+
+PostcardService manages creative postcard information, rendering, and export responsibilities.
+
+The presentation layer focuses on displaying the experience and handling user interaction.
+
 ### Project Structure
+
+The following tree highlights the principal application directories and documentation assets.
 
 ```text
 frontend/
@@ -536,7 +908,10 @@ frontend/
 │   │   ├── hero.png
 │   │   ├── memory.png
 │   │   ├── memory2.png
+│   │   ├── memoryOriginal.png
 │   │   ├── memorymonochrome.png
+│   │   ├── memorysepia.png
+│   │   ├── memoryvivid.png
 │   │   ├── wherehistory.png
 │   │   └── webp/
 │   │       ├── Explore.webp
@@ -546,7 +921,10 @@ frontend/
 │   │       ├── hero.webp
 │   │       ├── memory.webp
 │   │       ├── memory2.webp
+│   │       ├── memoryOriginal.webp
 │   │       ├── memorymonochrome.webp
+│   │       ├── memorysepia.webp
+│   │       ├── memoryvivid.webp
 │   │       └── wherehistory.webp
 │   ├── maps/
 │   │   └── campeche.geojson
@@ -575,31 +953,6 @@ frontend/
 ├── vercel.json
 └── README.md
 ```
-
-### Core Services
-
-| Service | Responsibility |
-| --- | --- |
-| `CloudinaryService` | Image transformations and fallback handling |
-| `DestinationSelectionService` | Shared destination selection |
-| `I18nService` | Spanish and English language management |
-| `PostcardService` | Postcard creation state and interactions |
-
-### Postcard Experience Flow
-
-```mermaid
-flowchart TD
-    A[Explore Campeche] --> B[Select Destination]
-    B --> C[Load Destination Photography]
-    C --> D[Cloudinary Media Delivery]
-    D --> E[Postcard Editor]
-    E --> F[Personalize Composition]
-    F --> G[Front and Back Preview]
-    G --> H[Visual Presentation]
-    H --> I[Editorial Gallery]
-```
-
-The architecture separates destination data, media delivery, application state, and presentation logic to support reusable components and future improvements.
 
 ---
 
@@ -724,7 +1077,7 @@ The objective is to maintain a consistent cultural experience across different d
 
 RAÍCES uses externally sourced photography to represent the cultural and geographic identity of Campeche.
 
-Original photography remains the property of its respective authors and is subject to its original licensing conditions.
+Original photography remains subject to the rights of its respective authors and the applicable licensing conditions.
 
 | Destination | Photographer / Contributor | Source |
 | --- | --- | --- |
@@ -734,6 +1087,19 @@ Original photography remains the property of its respective authors and is subje
 | Isla Aguada | Bernard DUPONT | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Colorful_Sea_Side_-_Isla_Aguada_Campeche.jpg) |
 
 Additional attribution information is available within the application and its destination data.
+
+### Adapted Photography
+
+Cloudinary transformations create alternative representations of the original photographs.
+
+These transformations may include:
+
+- Resizing.
+- Cropping.
+- Grayscale conversion.
+- Sepia effects.
+- Saturation adjustments.
+- Format and quality optimization.
 
 Photographic transformations do not transfer ownership of the original media.
 
@@ -780,6 +1146,8 @@ By combining authentic photography, geographic exploration, cinematic storytelli
 | Encourage discovery | Destination carousel and geographic visualization |
 | Integrate creative media | Cloudinary-powered photography |
 | Promote personal expression | Interactive digital postcards |
+| Enable creative transformations | Dynamic photographic styles |
+| Generate meaningful memories | Downloadable personalized postcards |
 | Deliver visual storytelling | Editorial design and cinematic presentation |
 | Reach international audiences | Spanish and English support |
 
@@ -791,6 +1159,7 @@ By combining authentic photography, geographic exploration, cinematic storytelli
 | Source Code | [GitHub Repository](https://github.com/Ezequie1Sc/frontend) |
 | Video Demonstration | [YouTube](https://www.youtube.com/watch?v=XDvKn_bbwCA) |
 | Media Infrastructure | [Cloudinary](https://cloudinary.com/) |
+| Technical Publications | [DEV Community Profile](https://dev.to/ezequie1sc) |
 
 ---
 
@@ -829,15 +1198,18 @@ RAÍCES has evolved through multiple development iterations, expanding its origi
 - Dynamic Angular postcard templates.
 - Expanded editorial compositions.
 - Improved responsive gallery layouts.
-- Monochrome visual presentation.
 
-### Documentation Refresh
+### Creative Media and Engineering Documentation
 
-- Updated project screenshots.
-- Nine optimized WebP documentation assets.
-- Expanded technical documentation.
-- Updated architecture diagrams.
-- Improved project presentation.
+- Original, Monochrome, Sepia, and Vivid photographic styles.
+- Visual comparison of Cloudinary transformations.
+- Documentation of dynamic transformation URL generation.
+- Documentation of browser-based Canvas rendering.
+- Documentation of PNG and ZIP export capabilities.
+- Twelve optimized WebP documentation assets.
+- Expanded architecture diagrams.
+- Improved technical explanations.
+- Community contribution guidelines.
 
 ---
 
@@ -849,14 +1221,88 @@ Potential future developments include:
 - Expanded photography collections.
 - More detailed geographic exploration.
 - Additional postcard templates.
+- Additional creative photographic transformations.
 - Interactive cultural timelines.
 - Digital travel collections.
 - Expanded accessibility features.
 - Additional internationalization options.
 - Further media delivery optimization.
 - Expanded cultural storytelling experiences.
+- Community-driven cultural content.
+- Additional automated testing.
 
 These improvements would continue the project's objective of connecting cultural heritage with creative technology.
+
+---
+
+## Contributing
+
+RAÍCES welcomes feedback, ideas, and contributions from developers, designers, cultural enthusiasts, and members of the Cloudinary community.
+
+This project is an opportunity to explore how modern web technologies and creative media can help share cultural heritage.
+
+Whether you are interested in Angular, Cloudinary, frontend engineering, visual storytelling, or cultural preservation, you are welcome to explore the repository and suggest improvements.
+
+### Ways to Contribute
+
+| Area | Contribution Opportunities |
+| --- | --- |
+| Frontend Engineering | Angular components, architecture, and reactive state |
+| Cloudinary | Image transformations and media delivery improvements |
+| UI/UX Design | Editorial layouts, interaction design, and accessibility |
+| Cultural Content | Destination descriptions and cultural information |
+| Photography | Properly licensed cultural photography |
+| Internationalization | Translation and language improvements |
+| Documentation | Technical explanations, examples, and tutorials |
+| Quality Assurance | Bug reports, testing, and compatibility improvements |
+
+### Contribution Workflow
+
+1. Fork the repository.
+2. Clone your fork.
+3. Create a dedicated branch.
+4. Implement and review your changes.
+5. Verify the application locally.
+6. Commit your changes.
+7. Push your branch.
+8. Open a pull request.
+
+Example:
+
+```bash
+git checkout -b feat/improve-postcard-experience
+```
+
+After completing your changes:
+
+```bash
+git add .
+git commit -m "feat: improve postcard experience"
+git push origin feat/improve-postcard-experience
+```
+
+### Contribution Guidelines
+
+- Respect the cultural identity and historical context of Campeche.
+- Preserve the editorial visual identity of the project.
+- Follow the existing Angular architecture and coding conventions.
+- Include meaningful commit messages.
+- Verify responsive behavior when modifying visual components.
+- Never commit private credentials or API secrets.
+- Respect third-party photography licenses and attribution requirements.
+- Document significant technical changes.
+
+### Feedback and Discussions
+
+If you have ideas, suggestions, or feedback, feel free to open an issue or submit a pull request.
+
+- [Open an Issue](https://github.com/Ezequie1Sc/frontend/issues/new)
+- [Explore Existing Issues](https://github.com/Ezequie1Sc/frontend/issues)
+- [View Pull Requests](https://github.com/Ezequie1Sc/frontend/pulls)
+
+I would especially welcome feedback from developers experimenting with Cloudinary, Angular, creative media, and interactive digital experiences.
+
+> The most meaningful projects are not only built for people, but also improved together with them.
 
 ---
 
@@ -876,7 +1322,8 @@ These improvements would continue the project's objective of connecting cultural
 
   <p>
     Interested in software engineering, creative development,
-    open-source technologies, and meaningful digital experiences.
+    open-source technologies, technical writing,
+    and meaningful digital experiences.
   </p>
 
   <a href="https://github.com/Ezequie1Sc">
@@ -900,10 +1347,12 @@ These improvements would continue the project's objective of connecting cultural
 Special thanks to:
 
 - Cloudinary for providing the media infrastructure and creative challenge.
-- The Cloudinary developer community for encouraging creative technology.
+- The Cloudinary developer community for encouraging creative technology, experimentation, and collaboration.
 - Wikimedia Commons contributors for sharing cultural photography.
+- The Angular community for building and maintaining modern web development technologies.
 - The communities that preserve the history and traditions of Campeche.
 - Everyone working to protect and celebrate Mexico's cultural heritage.
+- Developers and creators who share their knowledge and help others grow.
 
 RAÍCES is a celebration of the places, people, landscapes, and stories that shape our identity.
 
