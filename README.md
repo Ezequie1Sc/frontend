@@ -35,6 +35,10 @@
     <img src="https://img.shields.io/badge/Watch-Project_Demo-262B28?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch project demonstration" />
   </a>
 
+  <a href="https://dev.to/ezequie1sc/raices-discover-campeche-engineering-a-cultural-web-experience-with-angular-22-and-cloudinary-1ci2">
+    <img src="https://img.shields.io/badge/DEV-Read_the_Article-171717?style=for-the-badge&logo=devdotto&logoColor=white" alt="Read the RAÍCES technical article" />
+  </a>
+
 </div>
 
 ---
@@ -61,6 +65,7 @@
 - [Future Improvements](#future-improvements)
 - [Contributing](#contributing)
 - [Author](#author)
+- [Technical Article](#technical-article)
 - [Acknowledgments](#acknowledgments)
 
 ---
@@ -1159,6 +1164,7 @@ By combining authentic photography, geographic exploration, cinematic storytelli
 | Source Code | [GitHub Repository](https://github.com/Ezequie1Sc/frontend) |
 | Video Demonstration | [YouTube](https://www.youtube.com/watch?v=XDvKn_bbwCA) |
 | Media Infrastructure | [Cloudinary](https://cloudinary.com/) |
+| Technical Article | [Read on DEV Community](https://dev.to/ezequie1sc/raices-discover-campeche-engineering-a-cultural-web-experience-with-angular-22-and-cloudinary-1ci2) |
 | Technical Publications | [DEV Community Profile](https://dev.to/ezequie1sc) |
 
 ---
@@ -1339,6 +1345,30 @@ I would especially welcome feedback from developers experimenting with Cloudinar
   </a>
 
 </div>
+
+---
+
+## Technical Article
+
+Explore the engineering decisions, editorial design, and technical architecture behind RAÍCES in my detailed DEV Community article.
+
+### RAÍCES — Discover Campeche: Engineering a Cultural Web Experience with Angular 22 and Cloudinary
+
+[![Cloudinary Media Pipeline](public/assets/webp/cloudinary-pipeline.webp)](https://dev.to/ezequie1sc/raices-discover-campeche-engineering-a-cultural-web-experience-with-angular-22-and-cloudinary-1ci2)
+
+The article covers:
+
+- Cloudinary Remote Fetch and dynamic image transformations.
+- Reactive architecture with Angular Signals.
+- Interactive geographic exploration.
+- Double-sided digital postcards.
+- HTML5 Canvas rendering and PNG/ZIP exports.
+- Cultural storytelling through editorial design.
+- Engineering decisions and lessons learned.
+
+[**Read the full article on DEV Community →**](https://dev.to/ezequie1sc/raices-discover-campeche-engineering-a-cultural-web-experience-with-angular-22-and-cloudinary-1ci2)
+
+Feedback, technical discussions, and community contributions are welcome.
 
 ---
 
